@@ -108,6 +108,7 @@ export default function Reviews() {
         <div
           data-reveal=""
           ref={carouselRef}
+          role="region"
           aria-roledescription="carousel"
           aria-label={`${location.label} Google reviews`}
           className={styles.carousel}

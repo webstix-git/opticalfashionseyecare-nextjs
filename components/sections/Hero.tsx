@@ -36,9 +36,9 @@ export default function Hero() {
           <p className={styles.lead}>
             Since 1962, we&rsquo;ve grown from a small downtown practice into a team of five optometrists who take the time to know every patient and family.
           </p>
-          <div className={styles.reviewBadges} aria-label="Google review ratings by location">
+          <div className={styles.reviewBadges} role="group" aria-label="Google review ratings by location">
             {googleReviewLocations.map((location) => (
-              <a key={location.id} href={location.url} target="_blank" rel="noopener noreferrer" className={styles.reviewBadge} aria-label={`Read ${location.label} Google reviews: ${location.rating} out of 5 stars from ${location.count} reviews`}>
+              <a key={location.id} href={location.url} target="_blank" rel="noopener noreferrer" className={styles.reviewBadge}>
                 <GoogleMark />
                 <span>
                   <span className={styles.badgeLocation}>{location.label}</span>
@@ -49,7 +49,7 @@ export default function Hero() {
             ))}
           </div>
           <div className={styles.actions}>
-            <a href={contact.phoneHref} className={`btn ${styles.secondary}`} aria-label={`Call our ${offices.join(" and ")} clinics at ${contact.phone}`}>
+            <a href={contact.phoneHref} className={`btn ${styles.secondary}`}>
               <span className={styles.callText}>
                 <span className={styles.callLabel}>{offices.join(" & ")}</span>
                 <span className={styles.callNumber}>

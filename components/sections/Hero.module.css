@@ -135,7 +135,7 @@
 }
 
 .badgeRating span {
-  color: #fbbc04;
+  color: #8a5700;
 }
 
 .badgeCount {
@@ -188,6 +188,18 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   opacity: 0.8;
+}
+
+/* At tablet widths, keep the headline on the light side of the photograph. */
+@media (min-width: 700px) and (max-width: 1023px) {
+  .overlay {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.93) 45%, rgba(255, 255, 255, 0.78) 70%, rgba(255, 255, 255, 0.45) 100%);
+  }
+
+  .content,
+  .title {
+    max-width: 610px;
+  }
 }
 
 /* On phones the copy can outgrow 700px, so the section grows instead of clipping it. */

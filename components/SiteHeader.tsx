@@ -100,13 +100,30 @@ export default function SiteHeader() {
             <span className={styles.ctaLong}>Schedule an Appointment</span>
             <span className={styles.ctaShort}>Book</span>
           </a>
-          <button type="button" className={styles.menuButton} aria-expanded={menuOpen} aria-controls="mobile-nav" onClick={() => setMenuOpen((open) => !open)}>
-            {menuOpen ? "Close" : "Menu"}
+          <button
+            type="button"
+            className={`${styles.menuButton} ${menuOpen ? styles.menuButtonOpen : ""}`}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span className={styles.hamburger} aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
           </button>
         </div>
       </div>
-      {menuOpen && (
-        <nav id="mobile-nav" aria-label="Primary" className={styles.mobileNav}>
+      {menuOpen && <button type="button" className={styles.backdrop} aria-label="Close menu" onClick={closeMenu} />}
+      <nav id="mobile-nav" aria-label="Primary" aria-hidden={!menuOpen} inert={!menuOpen} className={`${styles.mobileNav} ${menuOpen ? styles.mobileNavOpen : ""}`}>
+        <div className={styles.mobileNavHead}>
+          <span>Menu</span>
+          <button type="button" className={styles.drawerClose} aria-label="Close menu" onClick={closeMenu}>
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
           {headerNav.map((n) => (
             <a key={n.label} href={n.href} onClick={closeMenu} className={styles.mobileLink} aria-current={current(n.href)}>
               {n.label}
@@ -120,8 +137,7 @@ export default function SiteHeader() {
               Order Contacts
             </a>
           </div>
-        </nav>
-      )}
+      </nav>
     </header>
   );
 }
