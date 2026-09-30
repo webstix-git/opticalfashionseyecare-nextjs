@@ -360,3 +360,9 @@
     display: inline;
   }
 }
+
+@media (max-width: 425px) {
+  .cta {
+    display: none;
+  }
+}
