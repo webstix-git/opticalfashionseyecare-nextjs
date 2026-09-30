@@ -1,0 +1,195 @@
+.methodIcon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--green-dark);
+  margin-bottom: 10px;
+}
+
+.locationsBand {
+  background: var(--surface);
+  border-top: 1px solid var(--card-line);
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.intro {
+  margin: 0;
+  max-width: 760px;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.hoursTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.bookingBand {
+  background: #ffffff;
+  border-top: 1px solid var(--card-line);
+  border-bottom: 1px solid var(--card-line);
+}
+
+.formsBand {
+  background: var(--surface);
+  border-bottom: 1px solid var(--card-line);
+}
+
+.formsLayout {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+  display: grid;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: start;
+}
+
+@media (min-width: 1000px) {
+  .formsLayout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  }
+}
+
+.formsCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bring {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-line);
+}
+
+.portal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-line);
+}
+
+.formList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--card-line);
+  border-radius: 20px;
+  padding: clamp(20px, 2.6vw, 28px);
+}
+
+.formCard .methodIcon {
+  margin-bottom: 0;
+  align-self: start;
+}
+
+.formCard > :global(.btn) {
+  grid-column: 2;
+  justify-self: start;
+}
+
+@media (min-width: 640px) {
+  .formCard {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .formCard > :global(.btn) {
+    grid-column: auto;
+  }
+}
+
+.formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.formText {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.infoText {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--green-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}

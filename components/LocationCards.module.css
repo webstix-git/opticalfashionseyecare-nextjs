@@ -1,0 +1,245 @@
+.locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 24px;
+}
+
+.location {
+  --card-pad: clamp(22px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid var(--card-line);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.location > :not(.photo, .finding) {
+  padding-inline: var(--card-pad);
+}
+
+.photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--card-line);
+}
+
+.photoImg {
+  object-fit: cover;
+  object-position: center 60%;
+  transition: transform 0.4s ease;
+}
+
+.photo:hover .photoImg {
+  transform: scale(1.03);
+}
+
+.locationHead {
+  padding-top: var(--card-pad);
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--card-line);
+}
+
+.locationTitle {
+  margin: 0;
+  font-size: 1.625rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.locationSub {
+  margin: 4px 0 0;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.details {
+  margin: 0;
+  padding-block: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.detailIcon {
+  display: grid;
+  place-items: center;
+  padding-top: 1px;
+  color: var(--navy);
+}
+
+.detail dt {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.detail dd {
+  margin: 2px 0 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.address {
+  font-style: normal;
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+
+.address a,
+.detailLink {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--field-line);
+  text-underline-offset: 4px;
+}
+
+.detailLink {
+  font-size: 1.0625rem;
+}
+
+.address a:hover,
+.detailLink:hover {
+  color: var(--navy);
+  text-decoration-color: currentColor;
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hoursTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.hoursList {
+  margin: 0;
+  padding: 4px 18px;
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  background: var(--surface);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.hoursList div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 9px;
+}
+
+.hoursList div + div {
+  border-top: 1px solid var(--card-line);
+}
+
+.hoursList dt {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.hoursList dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+.hoursList .closed dt,
+.hoursList .closed dd {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.finding {
+  margin: 22px var(--card-pad) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.findingTitle {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.findingList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.findingList li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.findingList li::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.locationActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 24px;
+  padding-bottom: var(--card-pad);
+}
+
+.locationActions :global(.btn) {
+  flex: 1 1 180px;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photoImg {
+    transition: none;
+  }
+}

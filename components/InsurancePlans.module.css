@@ -1,0 +1,168 @@
+.plans {
+  display: grid;
+  gap: 24px;
+}
+
+.planCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #ffffff;
+  border: 1px solid var(--card-line);
+  border-radius: 20px;
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.planHead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 720px;
+}
+
+.planTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.planText {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.logoGrid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+/* Logos are drawn inside a 133x110 box, the size they were made for */
+.logo {
+  height: 126px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+}
+
+.logo img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 133px;
+  max-height: 110px;
+}
+
+@media (max-width: 479px) {
+  .logoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.savings {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 32px;
+  background: #ffffff;
+  border: 1px solid var(--card-line);
+  border-left: 4px solid var(--navy);
+  border-radius: 20px;
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.savingsCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 360px;
+}
+
+.savingsText {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.savingsText strong {
+  color: var(--navy);
+}
+
+.savingsActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.notice + p {
+  margin-top: 24px;
+}
+
+.notice {
+  margin-top: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: clamp(20px, 3vw, 28px) clamp(20px, 3vw, 32px);
+  background: #eef0fb;
+  border: 1px solid rgba(46, 49, 146, 0.22);
+  border-left: 5px solid var(--navy);
+  border-radius: 16px;
+}
+
+.noticeIcon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.noticeBody {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 9px;
+}
+
+.notice .noticeTitle {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+}
+
+.notice .noticeText {
+  margin: 0;
+  max-width: 980px;
+  font-size: 1.0312rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.noticeText strong {
+  font-weight: 700;
+  color: var(--navy-dark);
+}
+
+@media (max-width: 560px) {
+  .notice {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

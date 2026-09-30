@@ -1,0 +1,42 @@
+.section {
+  container-type: inline-size;
+  background: var(--surface);
+  border-bottom: 1px solid var(--card-line);
+}
+
+.card {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+}
+
+.copy {
+  padding: var(--section-space) clamp(24px, 5vw, 80px) var(--section-space)
+    max(var(--gutter), calc((100cqw - var(--container)) / 2 + var(--gutter)));
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: var(--navy);
+}
+
+.body {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.cta {
+  align-self: flex-start;
+  margin-top: 6px;
+  white-space: normal;
+}
+
+.photo {
+  position: relative;
+  min-height: 420px;
+}

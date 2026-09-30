@@ -1,0 +1,233 @@
+.glance {
+  margin: 0;
+  border: 1px solid var(--card-line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.glance > div {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 20px;
+}
+
+.glance > div + div {
+  border-top: 1px solid var(--card-line);
+}
+
+.glance > div:nth-child(odd) {
+  background: var(--surface);
+}
+
+.glance dt {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.glance dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.line {
+  display: block;
+}
+
+.hoursGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 16px;
+}
+
+.hoursCard {
+  padding: 20px 22px;
+  border: 1px solid var(--card-line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.hoursGrid .hoursCard h3 {
+  margin: 0 0 10px;
+  font-size: 1.125rem;
+}
+
+.hoursCard dl {
+  margin: 0;
+}
+
+.hoursCard dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 0;
+  font-size: 1rem;
+}
+
+.hoursCard dl > div + div {
+  border-top: 1px solid var(--card-line);
+}
+
+.hoursCard dt {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hoursCard dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.jump a {
+  padding: 8px 14px;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.jump a:hover {
+  border-color: var(--navy);
+}
+
+.group {
+  margin-top: 32px;
+  scroll-margin-top: calc(var(--header-h-scrolled) + 16px);
+}
+
+.group .groupHead h3 {
+  margin: 0;
+  font-size: 1.375rem;
+}
+
+.group .groupHead p {
+  margin: 4px 0 0;
+  font-size: 1rem;
+}
+
+.group .services {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+}
+
+.group .service {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 20px;
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.service h4 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.group .service p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.group .tags {
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.group .tags li {
+  margin: 0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #eef0fb;
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.more {
+  margin-top: auto;
+  padding-top: 4px;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+.resourcesSection .resources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.resources li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 20px;
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+}
+
+.resources li span:not(.srOnly) {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.note {
+  padding: 24px 26px;
+  border-left: 5px solid var(--navy);
+  border-radius: 12px;
+  background: #eef0fb;
+}
+
+section.note h2 {
+  font-size: 1.375rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .glance > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

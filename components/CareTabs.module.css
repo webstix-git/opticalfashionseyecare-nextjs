@@ -1,0 +1,43 @@
+.bar {
+  position: sticky;
+  top: var(--header-h-scrolled);
+  z-index: 30;
+  background: #ffffff;
+  border-bottom: 1px solid var(--card-line);
+  transition: top 0.3s ease;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(20px, 3vw, 40px);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab:hover {
+  color: var(--navy);
+}
+
+.tab[aria-current="true"] {
+  color: var(--navy);
+  border-bottom-color: var(--navy);
+}

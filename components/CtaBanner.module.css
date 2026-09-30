@@ -1,0 +1,65 @@
+.banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #000000;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: right center;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+.inner {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.title {
+  margin: 0;
+  max-width: 640px;
+  font-size: var(--section-heading);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.text {
+  margin: 0;
+  max-width: 560px;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 12px;
+}
+
+.secondary {
+  gap: 10px;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+.secondary:hover {
+  background: var(--mint-light);
+  color: var(--ink);
+}

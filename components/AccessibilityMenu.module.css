@@ -1,0 +1,246 @@
+.root {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.trigger {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(20, 22, 43, 0.28);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.trigger:hover,
+.trigger[aria-expanded="true"] {
+  background: var(--navy-dark);
+}
+
+.panel {
+  width: min(340px, calc(100vw - 40px));
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 20px;
+  border: 1px solid var(--card-line);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(20, 22, 43, 0.22);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.close {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.close:hover {
+  background: var(--card-line);
+}
+
+.intro {
+  margin-top: 6px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.group {
+  margin-top: 18px;
+}
+
+.groupLabel {
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.sizes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.size {
+  min-height: 44px;
+  border: 1px solid var(--field-line);
+  border-radius: 8px;
+  background: #ffffff;
+  font: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.size[aria-pressed="true"] {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.toggles {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--card-line);
+  border-radius: 10px;
+  background: #ffffff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  border-color: var(--field-line);
+}
+
+.toggle[aria-checked="true"] {
+  border-color: var(--navy);
+  background: #eef0fb;
+}
+
+.toggleText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggleLabel {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.toggleHint {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 24px;
+  border-radius: 999px;
+  background: #9aa1b5;
+  transition: background-color 0.2s ease;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.toggle[aria-checked="true"] .switch {
+  background: var(--navy);
+}
+
+.toggle[aria-checked="true"] .switch::after {
+  transform: translateX(16px);
+}
+
+.foot {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.reset {
+  padding: 10px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: #ffffff;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.reset:hover:not(:disabled) {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.reset:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.statement {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* Sit above the sticky mobile booking bar. */
+@media (max-width: 719px) {
+  .root {
+    right: 14px;
+    bottom: 86px;
+  }
+
+  .trigger {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media print {
+  .root {
+    display: none;
+  }
+}

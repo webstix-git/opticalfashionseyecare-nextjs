@@ -1,0 +1,281 @@
+/* Transparent over the hero; turns solid once the page scrolls or the mobile menu opens. */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Keeps the dark nav readable where the photo behind it is busy. */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 130%;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 55%, rgba(255, 255, 255, 0) 100%);
+  transition: opacity 0.3s ease;
+}
+
+.solid {
+  background: var(--surface);
+  border-bottom-color: var(--card-line);
+  box-shadow: 0 8px 30px rgba(20, 22, 43, 0.1);
+}
+
+.solid::before {
+  opacity: 0;
+}
+
+/* Folds away once the page scrolls, so the scrolled header stays compact */
+.utility {
+  height: var(--utility-h);
+  overflow: hidden;
+  background: var(--mint-light);
+  transition: height 0.3s ease;
+}
+
+.scrolled .utility {
+  height: 0;
+}
+
+.utilityInner {
+  max-width: var(--container);
+  height: var(--utility-h);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.utilityGroup {
+  display: flex;
+  align-items: center;
+}
+
+.utilityGroup a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.utilityGroup a + a {
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid var(--field-line);
+}
+
+.utilityGroup strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.utilityGroup a:hover {
+  color: var(--green-dark);
+}
+
+.utilityGroup a:hover strong,
+.utilityGroup a:hover:not(:has(strong)) {
+  text-decoration: underline;
+}
+
+.utilityGroup a[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bar {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 12px var(--gutter) 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  transition: padding 0.3s ease;
+}
+
+.scrolled .bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.logoImage {
+  height: 100px;
+  width: auto;
+  display: block;
+  transition: height 0.3s ease;
+}
+
+.scrolled .logoImage {
+  height: 64px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--navy);
+  border-bottom-color: var(--navy);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta {
+  font-size: 1rem;
+  padding: 14px 23px;
+}
+
+.ctaShort {
+  display: none;
+}
+
+.menuButton {
+  display: none;
+  background: #ffffff;
+  border: 1px solid var(--field-line);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.mobileNav {
+  border-top: 1px solid var(--card-line);
+  background: var(--surface);
+  padding: 8px var(--gutter) 24px;
+  display: grid;
+}
+
+.mobileLink {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 15px 0;
+  border-bottom: 1px solid #eaf1ec;
+}
+
+.mobileLink[aria-current="page"] {
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.mobileExtra {
+  display: flex;
+  gap: 24px;
+  padding-top: 18px;
+  font-weight: 700;
+}
+
+/* The full nav needs the whole 1280px container; below that it collapses into the menu. */
+@media (min-width: 1280px) {
+  /* Equal side columns keep the nav centred on the page, not just in the space beside the logo. */
+  .bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+  }
+  .logo {
+    justify-self: start;
+  }
+  .nav {
+    gap: 24px;
+  }
+  .actions {
+    justify-self: end;
+  }
+  .mobileNav {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .nav {
+    display: none;
+  }
+  .menuButton {
+    display: inline-block;
+  }
+}
+
+/* Insurance and Careers are also in the main nav, so they give way first. */
+@media (max-width: 1099px) {
+  .utilityGroup .utilityExtra {
+    display: none;
+  }
+}
+
+@media (max-width: 939px) {
+  .utilityGroup:not(.utilityLinks) a:nth-child(n + 2) {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .utilityLinks {
+    display: none;
+  }
+}
+
+@media (max-width: 699px) {
+  .logoImage {
+    height: 68px;
+  }
+  .scrolled .logoImage {
+    height: 56px;
+  }
+}
+
+@media (max-width: 559px) {
+  .ctaLong {
+    display: none;
+  }
+  .ctaShort {
+    display: inline;
+  }
+}

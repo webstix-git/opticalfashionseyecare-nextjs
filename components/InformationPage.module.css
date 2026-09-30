@@ -1,0 +1,82 @@
+.content {
+  max-width: 920px;
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.content section + section {
+  margin-top: 48px;
+}
+
+.content h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.625rem, 3vw, 2.125rem);
+  letter-spacing: -0.025em;
+}
+
+.content h3 {
+  margin: 28px 0 8px;
+  font-size: 1.25rem;
+}
+
+.content p,
+.content li {
+  color: var(--ink-soft);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.content p + p {
+  margin-top: 14px;
+}
+
+.content ul {
+  margin: 14px 0 0;
+  padding-left: 24px;
+}
+
+.content a {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.linkGrid li {
+  margin: 0;
+}
+
+.linkGrid a {
+  display: block;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.linkGrid a:hover {
+  border-color: var(--navy);
+}
+
+.linkGrid span {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .linkGrid {
+    grid-template-columns: 1fr;
+  }
+}

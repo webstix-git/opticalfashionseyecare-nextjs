@@ -1,0 +1,47 @@
+.band {
+  background: #ffffff;
+  border-bottom: 1px solid var(--card-line);
+}
+
+.section {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+  display: grid;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+
+.media {
+  border-radius: 20px;
+  border: 1px solid var(--field-line);
+  overflow: hidden;
+}
+
+/* Shown at the photo's own 4:3 shape, never cropped or scaled past its 708px width */
+.photo {
+  display: block;
+  width: 100%;
+  max-width: 708px;
+  height: auto;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.body {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+@media (min-width: 900px) {
+  .section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,292 @@
+.band {
+  background: #ffffff;
+  border-bottom: 1px solid var(--card-line);
+}
+
+.alt {
+  background: var(--surface);
+}
+
+.section {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.split {
+  display: grid;
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 760px;
+  margin: 0 auto clamp(36px, 4vw, 52px);
+  text-align: center;
+}
+
+.body,
+.intro {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+.intro {
+  font-size: 1.125rem;
+}
+
+.media {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.landscape {
+  aspect-ratio: 3 / 2;
+}
+
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.jump a {
+  padding: 9px 16px;
+  border: 1px solid var(--card-line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.jump a:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.brandGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.brand {
+  height: 130px;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.brand:hover {
+  border-color: var(--line);
+  box-shadow: 0 10px 24px rgba(20, 22, 43, 0.06);
+}
+
+.brand img {
+  display: block;
+  width: 133px;
+  height: 110px;
+}
+
+.lensGrid {
+  list-style: none;
+  margin: clamp(40px, 5vw, 64px) 0 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(16px, 1.6vw, 22px);
+}
+
+.lensCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: clamp(22px, 2.2vw, 28px);
+  background: var(--surface);
+  border: 1px solid var(--card-line);
+  border-radius: 18px;
+}
+
+@media (min-width: 640px) {
+  .lensGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .lensGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.cardTitle {
+  margin: 0 0 6px;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.cardText {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 12px 20px;
+  width: 100%;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 30px;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--green-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.callout {
+  width: 100%;
+  padding: 18px 22px;
+  background: #ffffff;
+  border: 1px solid var(--card-line);
+  border-left: 4px solid var(--navy);
+  border-radius: 12px;
+}
+
+.callout p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.callout strong {
+  color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+/* Myopia */
+
+.myopiaBand {
+  container-type: inline-size;
+}
+
+.myopia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+}
+
+.myopiaMedia {
+  position: relative;
+  min-height: 420px;
+}
+
+/* Left padding lines the text up with the 1280px container while the photo runs to the edge */
+.myopiaCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 22px;
+  padding: var(--section-space) clamp(24px, 5vw, 80px) var(--section-space)
+    max(var(--gutter), calc((100cqw - var(--container)) / 2 + var(--gutter)));
+}
+
+.myopia .myopiaEyebrow {
+  color: var(--navy);
+}
+
+.myopiaText {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.valueGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+}
+
+.valueCard {
+  padding: clamp(24px, 3vw, 32px);
+  background: #ffffff;
+  border: 1px solid var(--card-line);
+  border-radius: 18px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  padding-top: clamp(32px, 4vw, 44px);
+}
+
+.faq {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

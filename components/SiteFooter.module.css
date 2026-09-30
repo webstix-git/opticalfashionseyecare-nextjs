@@ -1,0 +1,271 @@
+.footer {
+  background: #ffffff;
+  border-top: 1px solid var(--card-line);
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: clamp(52px, 6vw, 76px) var(--gutter) 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.columns {
+  --col-gap: clamp(32px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2.3fr) minmax(150px, 0.7fr);
+  gap: 40px var(--col-gap);
+  align-items: start;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 320px;
+}
+
+.brand p {
+  line-height: 1.7;
+}
+
+.logo {
+  height: 110px;
+  width: auto;
+  align-self: flex-start;
+}
+
+.contactNote,
+.directionsNote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--card-line);
+  color: var(--navy);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.social a:hover,
+.social a:focus-visible {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #ffffff;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.quickLinks {
+  display: flex;
+}
+
+.heading {
+  margin: 0 0 4px;
+  font-family: var(--font-heading);
+  color: #14162b;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.column a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.column a:hover {
+  color: var(--navy);
+}
+
+.locations {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+}
+
+.locations .heading {
+  margin-bottom: 0;
+}
+
+.addresses {
+  list-style: none;
+  margin: 0 0 4px;
+  padding: 0 0 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px var(--col-gap);
+  border-bottom: 1px solid var(--card-line);
+}
+
+.addresses li {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .addresses {
+    grid-template-columns: 1fr;
+  }
+
+  .addresses li + li {
+    padding-top: 18px;
+    border-top: 1px solid var(--card-line);
+  }
+}
+
+.addresses address {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.addressName {
+  margin-bottom: 4px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: #14162b;
+}
+
+.addresses a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.addresses .addressLink {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.addresses a:hover {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hoursLocation {
+  padding-top: 14px;
+  border-top: 1px dashed var(--card-line);
+}
+
+.hoursLocation h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hoursLocation dl {
+  margin: 0;
+}
+
+.hoursLocation dl > div {
+  display: grid;
+  grid-template-columns: minmax(78px, 1fr) auto;
+  gap: 12px;
+  padding: 2px 0;
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.hoursLocation dt,
+.hoursLocation dd {
+  margin: 0;
+}
+
+.hoursLocation dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.hoursLocation .closed {
+  color: var(--muted);
+}
+
+@media (max-width: 1050px) {
+  .columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: row dense;
+  }
+
+  .locations {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .brand {
+    max-width: none;
+  }
+
+  .logo {
+    height: 88px;
+  }
+}
+
+.bottom {
+  border-top: 1px solid var(--card-line);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+}
+
+.legal a {
+  color: var(--muted);
+}
+
+.legal a:hover {
+  color: var(--navy);
+}
