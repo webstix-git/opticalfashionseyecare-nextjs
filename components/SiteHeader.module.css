@@ -416,7 +416,7 @@
   }
   .nav {
     gap: 18px;
-    font-size: 1rem;
+    font-size: 0.9375rem;
   }
   .actions {
     justify-self: end;
