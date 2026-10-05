@@ -8,6 +8,11 @@
   padding-bottom: var(--section-space);
 }
 
+/* Lets #careers land on the heading below the fixed header and sticky page tabs. */
+.headingAnchor {
+  scroll-margin-top: 72px;
+}
+
 .head {
   display: flex;
   flex-direction: column;
@@ -125,6 +130,10 @@
   height: 7px;
   border-radius: 50%;
   background: var(--green);
+}
+
+.applyButton {
+  margin-top: 24px;
 }
 
 /* Shared requirements for every role */

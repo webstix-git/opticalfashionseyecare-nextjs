@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import PhoneIcon from "@/components/PhoneIcon";
@@ -25,14 +25,36 @@ export default function SiteHeader() {
   const pathname = usePathname();
   const current = (href: string) => (isCurrent(pathname, href) ? ("page" as const) : undefined);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [hash, setHash] = useState("");
+  const navRef = useRef<HTMLElement>(null);
   const closeMenu = () => setMenuOpen(false);
+  const currentSubmenu = (href: string) => {
+    const [linkPath, anchor] = href.split("#");
+    return anchor && pathname === linkPath && hash === `#${anchor}` ? ("location" as const) : current(href);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const updateHash = () => setHash(window.location.hash);
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, [pathname]);
+
+  useEffect(() => {
+    const closeOnOutsideClick = (event: MouseEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) setOpenSubmenu(null);
+    };
+    document.addEventListener("mousedown", closeOnOutsideClick);
+    return () => document.removeEventListener("mousedown", closeOnOutsideClick);
   }, []);
 
   const headerClass = [styles.header, scrolled && styles.scrolled, (scrolled || menuOpen) && styles.solid].filter(Boolean).join(" ");
@@ -88,15 +110,48 @@ export default function SiteHeader() {
             className={styles.logoImage}
           />
         </a>
-        <nav aria-label="Primary" className={styles.nav}>
-          {headerNav.map((n) => (
-            <a key={n.label} href={n.href} aria-current={current(n.href)}>
-              {n.label}
-            </a>
-          ))}
+        <nav ref={navRef} aria-label="Primary" className={styles.nav}>
+          {headerNav.map((n) =>
+            n.children ? (
+              <div key={n.label} className={styles.navItem} onMouseEnter={() => setOpenSubmenu(n.label)} onMouseLeave={() => setOpenSubmenu(null)}>
+                <a href={n.href} aria-current={current(n.href)}>
+                  {n.label}
+                </a>
+                <button
+                  type="button"
+                  className={styles.submenuToggle}
+                  aria-label={`Show ${n.label} links`}
+                  aria-expanded={openSubmenu === n.label}
+                  aria-controls={`submenu-${n.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                  onClick={() => setOpenSubmenu((open) => (open === n.label ? null : n.label))}
+                  onKeyDown={(event) => {
+                    if (event.key === "Escape") setOpenSubmenu(null);
+                  }}
+                >
+                  <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="m4 6 4 4 4-4" />
+                  </svg>
+                </button>
+                <div
+                  id={`submenu-${n.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                  className={`${styles.submenu} ${openSubmenu === n.label ? styles.submenuOpen : ""}`}
+                >
+                  {n.children.map((child) => (
+                    <a key={child.href} href={child.href} onClick={() => setOpenSubmenu(null)} aria-current={currentSubmenu(child.href)}>
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a key={n.label} href={n.href} aria-current={current(n.href)}>
+                {n.label}
+              </a>
+            ),
+          )}
         </nav>
         <div className={styles.actions}>
-          <a href="/contact" className={`btn btn-primary ${styles.cta}`}>
+          <a href="/contact#book" className={`btn btn-primary ${styles.cta}`}>
             <span className={styles.ctaLong}>Schedule an Appointment</span>
             <span className={styles.ctaShort}>Book</span>
           </a>
@@ -125,9 +180,20 @@ export default function SiteHeader() {
           </button>
         </div>
           {headerNav.map((n) => (
-            <a key={n.label} href={n.href} onClick={closeMenu} className={styles.mobileLink} aria-current={current(n.href)}>
-              {n.label}
-            </a>
+            <div key={n.label} className={styles.mobileNavItem}>
+              <a href={n.href} onClick={closeMenu} className={styles.mobileLink} aria-current={current(n.href)}>
+                {n.label}
+              </a>
+              {n.children && (
+                <div className={styles.mobileSubmenu}>
+                  {n.children.map((child) => (
+                    <a key={child.href} href={child.href} onClick={closeMenu} aria-current={currentSubmenu(child.href)}>
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <div className={styles.mobileExtra}>
             <a href={patientLinks.portal} target="_blank" rel="noopener noreferrer" aria-label="Patient Portal (opens in a new tab)" onClick={closeMenu}>

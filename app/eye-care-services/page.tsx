@@ -9,8 +9,8 @@ import ImageSlot from "@/components/ImageSlot";
 import LocationCards from "@/components/LocationCards";
 import PhoneIcon from "@/components/PhoneIcon";
 import {
-  careTabs,
   contact,
+  eyeCareSectionTabs,
   examAges,
   examPhoto,
   medicalConditions,
@@ -56,7 +56,7 @@ export default function EyeCareServicesPage() {
           }
         />
 
-        <CareTabs tabs={careTabs} />
+        <CareTabs tabs={eyeCareSectionTabs} />
 
         <section id="exams" aria-labelledby="exams-h" className={styles.band}>
           <div className={`container ${styles.section} ${styles.exams}`}>

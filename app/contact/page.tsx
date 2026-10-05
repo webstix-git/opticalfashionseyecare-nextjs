@@ -4,11 +4,14 @@ import SiteFooter from "@/components/SiteFooter";
 import MobileBookingBar from "@/components/MobileBookingBar";
 import RevealObserver from "@/components/RevealObserver";
 import PageHero from "@/components/PageHero";
+import CareTabs from "@/components/CareTabs";
+import ImageSlot from "@/components/ImageSlot";
+import InsurancePlans from "@/components/InsurancePlans";
 import { BookingProvider } from "@/components/BookingContext";
 import Booking from "@/components/sections/Booking";
 import LocationCards from "@/components/LocationCards";
 import PhoneIcon from "@/components/PhoneIcon";
-import { contact, locations, patientForms, patientLinks } from "@/lib/content";
+import { contact, contactSectionTabs, locations, patientForms, patientLinks } from "@/lib/content";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -68,6 +71,8 @@ export default function ContactPage() {
             intro="Find our clinic hours and locations, fill out your patient forms, or request an appointment online. We'll get back to you to confirm a time."
           />
 
+          <CareTabs tabs={contactSectionTabs} />
+
           <section id="locations" aria-labelledby="loc-h" className={styles.locationsBand}>
             <div className="container">
               <div data-reveal="" className={styles.head}>
@@ -91,6 +96,31 @@ export default function ContactPage() {
           <div className={styles.bookingBand}>
             <Booking />
           </div>
+
+          <section id="insurance" aria-labelledby="insurance-h" className={styles.insuranceBand}>
+            <div className={`container ${styles.insuranceSection}`}>
+              <div className={styles.insuranceLayout}>
+                <div data-reveal="" className={styles.insurancePhoto}>
+                  <ImageSlot
+                    src="/images/insurance-family.jpg"
+                    alt="Family sitting together at home"
+                    placeholder="Family sitting together at home"
+                    sizes="(max-width: 800px) 100vw, 42vw"
+                  />
+                </div>
+                <div data-reveal="" className={styles.insuranceCopy}>
+                  <p className="eyebrow">Insurance</p>
+                  <h2 id="insurance-h" className="section-title">
+                    Insurance We Accept
+                  </h2>
+                  <p className={styles.intro}>
+                    Because we provide both medical and routine eye care, we accept a number of insurance plans to help cover the cost, depending on your needs. Don&apos;t see your plan? Give us a call and we&apos;ll be happy to help with any questions about your benefits.
+                  </p>
+                </div>
+              </div>
+              <InsurancePlans />
+            </div>
+          </section>
 
           <section id="forms" aria-labelledby="forms-h" className={styles.formsBand}>
             <div className={`container ${styles.formsLayout}`}>
@@ -119,7 +149,7 @@ export default function ContactPage() {
               </div>
               <ul className={styles.formList}>
                 {patientForms.map((f) => (
-                  <li key={f.href} data-reveal="" className={styles.formCard}>
+                  <li key={f.title} data-reveal="" className={styles.formCard}>
                     <span className={styles.methodIcon}>
                       <FormIcon />
                     </span>
@@ -127,9 +157,15 @@ export default function ContactPage() {
                       <h3 className={styles.formTitle}>{f.title}</h3>
                       <p className={styles.formText}>{f.body}</p>
                     </div>
-                    <a href={f.href} target="_blank" rel="noopener noreferrer" className="btn btn-primary" aria-label={`Fill out the ${f.title}`}>
-                      Fill Out Form
-                    </a>
+                    {f.href ? (
+                      <a href={f.href} target="_blank" rel="noopener noreferrer" className="btn btn-primary" aria-label={`Fill out the ${f.title}`}>
+                        Fill Out Form
+                      </a>
+                    ) : (
+                      <button type="button" className="btn btn-primary" disabled aria-label={`${f.title} is unavailable`}>
+                        Fill Out Form
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -1,4 +1,5 @@
 export type NavLink = { label: string; href: string };
+export type HeaderNavLink = NavLink & { children?: NavLink[] };
 
 export const nav: NavLink[] = [
   { label: "Home", href: "/" },
@@ -9,13 +10,64 @@ export const nav: NavLink[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const headerNav: NavLink[] = [
+export const eyeCareSectionTabs: NavLink[] = [
+  { label: "Comprehensive Eye Exams", href: "#exams" },
+  { label: "Medical Eye Care", href: "#medical" },
+  { label: "Same-Day Eye Care", href: "#same-day" },
+  { label: "Pre & Post-Op Care", href: "#surgery" },
+];
+
+export const contactSectionTabs: NavLink[] = [
+  { label: "Locations & Hours", href: "#locations" },
+  { label: "Request an Appointment", href: "#book" },
+  { label: "Insurance", href: "#insurance" },
+  { label: "Patient Forms", href: "#forms" },
+];
+
+export const headerNav: HeaderNavLink[] = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Eye Care Services", href: "/eye-care-services" },
-  { label: "Eyeglasses & Contacts", href: "/eyeglasses-contacts" },
-  { label: "Insurance", href: "/about#insurance" },
-  { label: "FAQ", href: "/faq" },
+  {
+    label: "About Us",
+    href: "/about",
+    children: [
+      { label: "Our Story", href: "/about#about" },
+      { label: "Why Choose Us", href: "/about#why" },
+      { label: "Our Doctors", href: "/about#doctors" },
+      { label: "Careers", href: "/about#careers" },
+      { label: "Insurance", href: "/about#insurance" },
+    ],
+  },
+  {
+    label: "Eye Care Services",
+    href: "/eye-care-services",
+    children: eyeCareSectionTabs.map((link) => ({ ...link, href: `/eye-care-services${link.href}` })),
+  },
+  {
+    label: "Eyeglasses & Contacts",
+    href: "/eyeglasses-contacts",
+    children: [
+      { label: "Designer Frames", href: "/eyeglasses-contacts#brands" },
+      { label: "Lenses", href: "/eyeglasses-contacts#lenses" },
+      { label: "Contact Lenses", href: "/eyeglasses-contacts#contacts" },
+      { label: "Myopia Management", href: "/eyeglasses-contacts#myopia" },
+      { label: "Value Packages", href: "/eyeglasses-contacts#value" },
+    ],
+  },
+  {
+    label: "FAQ",
+    href: "/faq",
+    children: [
+      { label: "Appointments & Visits", href: "/faq#appointments" },
+      { label: "Eye Exams", href: "/faq#exams" },
+      { label: "Medical Eye Care", href: "/faq#medical" },
+      { label: "Glasses & Contacts", href: "/faq#eyewear" },
+    ],
+  },
+  {
+    label: "Contact Us",
+    href: "/contact",
+    children: contactSectionTabs.map((link) => ({ ...link, href: `/contact${link.href}` })),
+  },
 ];
 
 export const offices = ["La Crosse", "Holmen"];
@@ -566,21 +618,20 @@ export const medicalPlans: InsurancePlan[] = [
 ];
 
 // These online forms live on the clinic's current website. Re-host them before the domain moves to this site.
-export const patientForms: { title: string; body: string; href: string }[] = [
+export const patientForms: { title: string; body: string; href?: string }[] = [
   {
     title: "New Patient Form",
     body: "For your first visit. Covers your contact details, insurance, previous eye doctor, medications and allergies.",
-    href: "https://www.opticalfashionseyecare.com/new-patient-form/",
+    href: "https://forms.gle/enw6rEEZe6Z9qyz68",
   },
   {
     title: "Existing Patient Form",
     body: "Coming back to see us? Update your contact details, insurance, medications and any new allergies.",
-    href: "https://www.opticalfashionseyecare.com/existing-patient-form/",
   },
   {
     title: "Release of Health Information",
     body: "Authorize us to send or receive copies of your eye care records, for example to or from another doctor.",
-    href: "https://www.opticalfashionseyecare.com/contact-us/authorization-for-release-of-health-information/",
+    href: "https://forms.gle/h3vCV8uuXPXMPhGx8",
   },
 ];
 
@@ -596,12 +647,6 @@ export const careServices: NavLink[] = [
 ];
 
 export const footerServices = careServices;
-
-export const careTabs: NavLink[] = [
-  { label: "Comprehensive Eye Exams", href: "#exams" },
-  { label: "Medical Eye Care", href: "#medical" },
-  { label: "Pre & Post-Op Care", href: "#surgery" },
-];
 
 export const examPhoto: ImageContent & { alt: string; position?: string } = {
   photo: "Photo: doctor at the slit lamp with a patient during a comprehensive exam",

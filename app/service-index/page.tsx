@@ -249,11 +249,15 @@ export default function ServiceIndexPage() {
         <h2 id="resources-h">Patient Resources</h2>
         <ul className={styles.resources}>
           {patientForms.map((f) => (
-            <li key={f.href}>
-              <a href={f.href} target="_blank" rel="noopener noreferrer">
-                {f.title}
-                <span className={styles.srOnly}> (opens in a new tab)</span>
-              </a>
+            <li key={f.title}>
+              {f.href ? (
+                <a href={f.href} target="_blank" rel="noopener noreferrer">
+                  {f.title}
+                  <span className={styles.srOnly}> (opens in a new tab)</span>
+                </a>
+              ) : (
+                <span>{f.title}</span>
+              )}
               <span>{f.body}</span>
             </li>
           ))}

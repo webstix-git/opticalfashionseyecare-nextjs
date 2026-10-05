@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import { careerBenefits, careerRoles, careerSkills, locations } from "@/lib/content";
 import styles from "./Careers.module.css";
 
+const jobApplicationUrl = "https://forms.gle/ir6ZuYCY7XZcmbex5";
+
 function Icon({ children }: { children: ReactNode }) {
   return (
     <svg
@@ -69,11 +71,11 @@ const facts: { label: string; icon: ReactNode; lines: string[]; clinics?: { name
 
 export default function Careers() {
   return (
-    <section id="careers" aria-labelledby="careers-h" className={styles.band}>
+    <section aria-labelledby="careers" className={styles.band}>
       <div className={`container ${styles.section}`}>
         <div data-reveal="" className={styles.head}>
           <p className="eyebrow">Careers</p>
-          <h2 id="careers-h" className="section-title">
+          <h2 id="careers" className={`section-title ${styles.headingAnchor}`}>
             Join Our Team
           </h2>
           <p className={styles.intro}>
@@ -97,6 +99,9 @@ export default function Careers() {
                       <li key={d}>{d}</li>
                     ))}
                   </ul>
+                  <a href={jobApplicationUrl} target="_blank" rel="noopener noreferrer" className={`btn btn-outline ${styles.applyButton}`} aria-label={`Apply for ${r.title} (opens in a new tab)`}>
+                    Apply Now
+                  </a>
                 </div>
               </article>
             </li>
@@ -152,6 +157,9 @@ export default function Careers() {
             <p>
               <strong>Interested?</strong> Apply today by filling out the employment form.
             </p>
+            <a href={jobApplicationUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary" aria-label="Job Application Form (opens in a new tab)">
+              Job Application Form
+            </a>
           </div>
         </section>
       </div>

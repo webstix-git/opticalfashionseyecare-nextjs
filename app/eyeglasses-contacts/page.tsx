@@ -5,6 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import MobileBookingBar from "@/components/MobileBookingBar";
 import RevealObserver from "@/components/RevealObserver";
 import PageHero from "@/components/PageHero";
+import CareTabs from "@/components/CareTabs";
 import FaqList from "@/components/FaqList";
 import ImageSlot from "@/components/ImageSlot";
 import PhoneIcon from "@/components/PhoneIcon";
@@ -16,6 +17,7 @@ import {
   lensOptions,
   myopiaPhoto,
   patientLinks,
+  type NavLink,
 } from "@/lib/content";
 import styles from "./page.module.css";
 
@@ -34,12 +36,12 @@ const structuredData = {
   ],
 };
 
-const sections = [
-  { id: "brands", label: "Designer Frames" },
-  { id: "lenses", label: "Lenses" },
-  { id: "contacts", label: "Contact Lenses" },
-  { id: "myopia", label: "Myopia Management" },
-  { id: "value", label: "Value Packages" },
+const tabs: NavLink[] = [
+  { label: "Designer Frames", href: "#brands" },
+  { label: "Lenses", href: "#lenses" },
+  { label: "Contact Lenses", href: "#contacts" },
+  { label: "Myopia Management", href: "#myopia" },
+  { label: "Value Packages", href: "#value" },
 ];
 
 const eyewearFaqs = [
@@ -79,6 +81,8 @@ export default function EyeglassesContactsPage() {
           intro="Designer frames, quality lenses and contact lenses, fitted by a team that knows your eyes. Visit our optical shop in La Crosse or Holmen."
         />
 
+        <CareTabs tabs={tabs} />
+
         <section aria-labelledby="shop-h" className={styles.band}>
           <div className={`container ${styles.section} ${styles.split}`}>
             <div data-reveal="" className={styles.copy}>
@@ -94,13 +98,6 @@ export default function EyeglassesContactsPage() {
                 Because your eye exam and your eyewear happen under one roof, your prescription comes straight to the people fitting your lenses. Nothing gets lost
                 along the way.
               </p>
-              <nav aria-label="On this page" className={styles.jump}>
-                {sections.map((s) => (
-                  <a key={s.id} href={`#${s.id}`}>
-                    {s.label}
-                  </a>
-                ))}
-              </nav>
             </div>
             <div data-reveal="" className={`${styles.media} ${styles.landscape}`}>
               <ImageSlot
