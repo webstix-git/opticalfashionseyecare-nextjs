@@ -9,7 +9,7 @@ export default function MobileBookingBar() {
         <PhoneIcon />
         Call Us
       </a>
-      <a href="/contact" className={styles.primary}>
+      <a href="/contact#book" className={styles.primary}>
         Book a visit
       </a>
     </div>

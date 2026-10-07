@@ -9,10 +9,10 @@ export default function Myopia() {
         <div className={styles.copy}>
           <p className={`eyebrow ${styles.eyebrow}`}>For children &amp; families</p>
           <h2 id="myo-h" className="section-title">
-            Myopia Management
+            Myopia Control
           </h2>
           <p className={styles.body}>
-            Myopia, or nearsightedness, often starts in childhood and can progress as children grow. Myopia management is a plan to monitor your child&apos;s vision
+            Myopia, or nearsightedness, often starts in childhood and can progress as children grow. Myopia control is a plan to monitor your child&apos;s vision
             closely and use lenses or other options aimed at slowing that progression.
           </p>
           <p className={styles.body}>
@@ -20,7 +20,7 @@ export default function Myopia() {
             for your child and what to expect.
           </p>
           <a href="/eyeglasses-contacts#myopia" className={`btn btn-outline ${styles.cta}`}>
-            Learn About Myopia Management
+            Learn About Myopia Control
           </a>
         </div>
         <div className={styles.photo}>

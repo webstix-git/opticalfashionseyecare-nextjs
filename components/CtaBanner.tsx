@@ -24,7 +24,7 @@ export default function CtaBanner() {
         </p>
         <div className={styles.actions}>
           <a href="/contact#book" className="btn btn-primary">
-            Request an Appointment
+            Schedule an Appointment
           </a>
           <a href={contact.phoneHref} className={`btn ${styles.secondary}`}>
             <PhoneIcon />

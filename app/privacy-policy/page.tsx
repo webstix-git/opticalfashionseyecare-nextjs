@@ -12,16 +12,16 @@ export default function PrivacyPolicyPage() {
     <InformationPage crumb="Privacy Policy" title="Privacy Policy" intro="How we handle information collected through this website.">
       <section>
         <h2>Information We Collect</h2>
-        <p>When you contact us or request an appointment through this website, you may choose to provide information such as your name, email address, phone number, preferred location, and reason for your visit.</p>
-        <p>Please do not send detailed medical information, insurance numbers, or other sensitive health information through ordinary website forms or email.</p>
+        <p>When you use a patient form linked from this website, you may choose to provide information such as your name, contact details, and insurance information. Appointments are scheduled in the patient portal or by phone.</p>
+        <p>Please do not send detailed medical information, insurance numbers, or other sensitive health information through ordinary email.</p>
       </section>
       <section>
         <h2>How We Use Information</h2>
-        <p>We use the information you provide to respond to your request, coordinate an appointment, improve the website, and communicate with you about your inquiry. We do not sell personal information.</p>
+        <p>We use the information you provide to prepare for your visit, improve the website, and communicate with you about your inquiry. We do not sell personal information.</p>
       </section>
       <section>
         <h2>Third-Party Services</h2>
-        <p>This website may link to services such as Google Maps, Google Reviews, social networks, online patient forms, the patient portal, and FAIT contact lens ordering. Those services have their own privacy practices, which apply when you use them.</p>
+        <p>This website may link to services such as Google Maps, Google Reviews, social networks, online patient forms, the patient portal, and online contact lens ordering. Those services have their own privacy practices, which apply when you use them.</p>
       </section>
       <section>
         <h2>Contact Us</h2>

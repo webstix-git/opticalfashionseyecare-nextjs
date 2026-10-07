@@ -7,7 +7,6 @@ import PageHero from "@/components/PageHero";
 import CareTabs from "@/components/CareTabs";
 import ImageSlot from "@/components/ImageSlot";
 import InsurancePlans from "@/components/InsurancePlans";
-import { BookingProvider } from "@/components/BookingContext";
 import Booking from "@/components/sections/Booking";
 import LocationCards from "@/components/LocationCards";
 import PhoneIcon from "@/components/PhoneIcon";
@@ -17,7 +16,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Contact Us, Hours & Patient Forms | Optical Fashions Eye Care Clinic",
   description:
-    "Clinic hours and directions for our La Crosse and Holmen, Wisconsin eye care clinics, online patient forms, and appointment requests.",
+    "Clinic hours and directions for our La Crosse and Holmen, Wisconsin eye care clinics, online patient forms, and how to schedule an appointment.",
 };
 
 const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday"];
@@ -60,15 +59,14 @@ export default function ContactPage() {
       <a href="#main" className="skip-link">
         Skip to content
       </a>
-      <BookingProvider>
-        <SiteHeader />
+      <SiteHeader />
         <main id="main">
           <PageHero
             crumb="Contact"
             image="/images/about-doctor-patient.jpg"
             imagePosition="center 15%"
             title="We're Here to Help"
-            intro="Find our clinic hours and locations, fill out your patient forms, or request an appointment online. We'll get back to you to confirm a time."
+            intro="Find our clinic hours and locations, fill out your patient forms, or schedule an appointment in the patient portal or by phone."
           />
 
           <CareTabs tabs={contactSectionTabs} />
@@ -173,8 +171,7 @@ export default function ContactPage() {
           </section>
         </main>
         <SiteFooter />
-        <MobileBookingBar />
-      </BookingProvider>
+      <MobileBookingBar />
       <RevealObserver />
     </div>
   );

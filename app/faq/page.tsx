@@ -12,7 +12,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Optical Fashions Eye Care Clinic",
   description:
-    "Answers about appointments, insurance, eye exams, medical eye care, myopia management, glasses and contact lenses at our La Crosse and Holmen, Wisconsin offices.",
+    "Answers about appointments, insurance, eye exams, medical eye care, myopia control, glasses and contact lenses at our La Crosse and Holmen, Wisconsin offices.",
 };
 
 const structuredData = {

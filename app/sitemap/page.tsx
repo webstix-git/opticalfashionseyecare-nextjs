@@ -44,7 +44,7 @@ const groups: { label: string; href?: string; links: NavLink[] }[] = [
       { label: "Brands We Carry", href: "/eyeglasses-contacts#brands" },
       { label: "Lenses", href: "/eyeglasses-contacts#lenses" },
       { label: "Contact Lens Exams & Fittings", href: "/eyeglasses-contacts#contacts" },
-      { label: "Myopia Management", href: "/eyeglasses-contacts#myopia" },
+      { label: "Myopia Control", href: "/eyeglasses-contacts#myopia" },
       { label: "No Vision Insurance?", href: "/eyeglasses-contacts#value" },
     ],
   },
@@ -58,7 +58,7 @@ const groups: { label: string; href?: string; links: NavLink[] }[] = [
     href: "/contact",
     links: [
       { label: "Locations & Hours", href: "/contact#locations" },
-      { label: "Request an Appointment", href: "/contact#book" },
+      { label: "Schedule an Appointment", href: "/contact#book" },
       { label: "Patient Forms", href: "/contact#forms" },
     ],
   },

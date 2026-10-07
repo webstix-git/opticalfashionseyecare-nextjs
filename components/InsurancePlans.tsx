@@ -42,7 +42,7 @@ export default function InsurancePlans() {
         <div className={styles.savingsCopy}>
           <h3 className={styles.planTitle}>No Vision Insurance?</h3>
           <p className={styles.savingsText}>
-            Save <strong>25% on your eye exam</strong> and <strong>10% on glasses</strong> when you pay on the day of your visit.
+            Save <strong>25% on your eye exam</strong> and <strong>20% on glasses</strong> when you pay on the day of your visit.
           </p>
         </div>
         <div className={styles.savingsActions}>

@@ -23,7 +23,7 @@ const jakarta = localFont({
 export const metadata: Metadata = {
   title: "Optometrist in La Crosse & Holmen, WI | Optical Fashions Eye Care Clinic",
   description:
-    "Personalized eye care in La Crosse and Holmen, Wisconsin since 1962. Eye exams, dry eye, glaucoma, myopia management, contact lenses and designer eyewear.",
+    "Personalized eye care in La Crosse and Holmen, Wisconsin since 1962. Eye exams, dry eye, glaucoma, myopia control, contact lenses and designer eyewear.",
 };
 
 export const viewport: Viewport = {

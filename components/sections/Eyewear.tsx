@@ -17,7 +17,7 @@ export default function Eyewear() {
             </h2>
             <p className={styles.body}>
               Browse designer frames and quality lenses with an optician who helps you find a pair that fits your face, your prescription and the way you live. We
-              also fit contact lenses, with convenient contact lens ordering and reordering through FAIT.
+              also fit contact lenses. Order or reorder them online and have them shipped to you.
             </p>
             <div className={styles.actions}>
               <a href="/eyeglasses-contacts" className="btn btn-primary">

@@ -40,23 +40,27 @@ const tabs: NavLink[] = [
   { label: "Designer Frames", href: "#brands" },
   { label: "Lenses", href: "#lenses" },
   { label: "Contact Lenses", href: "#contacts" },
-  { label: "Myopia Management", href: "#myopia" },
+  { label: "Myopia Control", href: "#myopia" },
   { label: "Value Packages", href: "#value" },
 ];
 
 const eyewearFaqs = [
   ...(faqGroups.find((g) => g.id === "eyewear")?.items ?? []),
-  ...faqGroups.flatMap((g) => g.items).filter((f) => f.q === "What is myopia management?"),
+  ...faqGroups.flatMap((g) => g.items).filter((f) => f.q === "What is myopia control?"),
 ];
 
 const valueCards = [
   {
     title: "Same-Day Savings",
-    body: "No vision insurance? Save 25% on your eye exam and 10% on glasses when you pay on the day of your visit.",
+    body: "No vision insurance? Save 25% on your eye exam and 20% on glasses when you pay on the day of your visit.",
   },
   {
     title: "Value Packages & Promotions",
-    body: "Packages and offers on glasses and contacts that change through the year. Call or stop by to hear what's available right now.",
+    body: "Packages and offers on glasses that change through the year. Call or stop by to hear what's available right now.",
+  },
+  {
+    title: "Year-Supply Contact Deals",
+    body: "Order a year's supply of contact lenses and ask us about special deals.",
   },
   {
     title: "Using Vision Insurance?",
@@ -188,7 +192,7 @@ export default function EyeglassesContactsPage() {
               </ul>
               <div className={styles.callout}>
                 <p>
-                  <strong>Already wear contacts?</strong> Enjoy convenient contact lens ordering and reordering through FAIT, shipped straight to your door.
+                  <strong>Already wear contacts?</strong> Order or reorder online and have them shipped straight to your door.
                 </p>
               </div>
               <div className={styles.actions}>
@@ -222,11 +226,11 @@ export default function EyeglassesContactsPage() {
             <div className={styles.myopiaCopy}>
               <p className={`eyebrow ${styles.myopiaEyebrow}`}>For children &amp; families</p>
               <h2 id="myopia-h" className="section-title">
-                Myopia Management &amp; Myopia Control
+                Myopia Control
               </h2>
               <p className={styles.myopiaText}>
-                Myopia, or nearsightedness, often begins in childhood and can get worse as children grow. Myopia management, also called myopia control, means
-                monitoring your child&apos;s vision closely and using lenses or other options aimed at slowing that progression.
+                Myopia, or nearsightedness, often begins in childhood and can get worse as children grow. Myopia control means monitoring your child&apos;s
+                vision closely and using lenses or other options aimed at slowing that progression.
               </p>
               <p className={styles.myopiaText}>
                 One option we offer is Stellest lenses, eyeglass lenses designed for children with myopia. Your doctor will explain whether they&apos;re a good fit
@@ -251,7 +255,7 @@ export default function EyeglassesContactsPage() {
               </h2>
               <p className={styles.intro}>
                 Good eyewear shouldn&apos;t depend on having the right insurance. If you&apos;re paying out of pocket, ask us about value packages and current
-                promotions on glasses and contacts.
+                promotions on glasses, and special deals on a year&apos;s supply of contact lenses.
               </p>
             </div>
             <ul data-reveal="" className={styles.valueGrid}>

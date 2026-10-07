@@ -22,7 +22,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Eye Care Services in La Crosse & Holmen, WI | Optical Fashions Eye Care Clinic",
   description:
-    "Comprehensive eye exams for all ages, medical eye care for dry eye, glaucoma, cataracts, pink eye and myopia management, same-day medical appointments, and LASIK pre- and post-op care in La Crosse and Holmen, WI.",
+    "Comprehensive eye exams for all ages, medical eye care for dry eye, glaucoma, cataracts, pink eye and myopia control, same-day medical appointments, and LASIK pre- and post-op care in La Crosse and Holmen, WI.",
 };
 
 const structuredData = {
@@ -86,7 +86,7 @@ export default function EyeCareServicesPage() {
                   Schedule an Eye Exam
                 </a>
                 <a href={patientLinks.portal} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                  Patient Portal (RevolutionEHR)
+                  Patient Portal
                 </a>
               </div>
               <p className={styles.note}>

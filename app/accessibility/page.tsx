@@ -89,7 +89,7 @@ export default function AccessibilityPage() {
       <section>
         <h2>Third-Party Content</h2>
         <p>
-          Some features are provided by other companies, including our patient portal, online patient forms, FAIT contact lens ordering, Google Maps, Google reviews and social media. We
+          Some features are provided by other companies, including our patient portal, online patient forms, online contact lens ordering, Google Maps, Google reviews and social media. We
           choose partners with care, but we can&apos;t fully control the accessibility of their content. If you have trouble with any of these, call us and
           we&apos;ll help you directly.
         </p>

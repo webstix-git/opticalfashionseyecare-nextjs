@@ -19,7 +19,7 @@ export const eyeCareSectionTabs: NavLink[] = [
 
 export const contactSectionTabs: NavLink[] = [
   { label: "Locations & Hours", href: "#locations" },
-  { label: "Request an Appointment", href: "#book" },
+  { label: "Schedule an Appointment", href: "#book" },
   { label: "Insurance", href: "#insurance" },
   { label: "Patient Forms", href: "#forms" },
 ];
@@ -49,7 +49,7 @@ export const headerNav: HeaderNavLink[] = [
       { label: "Designer Frames", href: "/eyeglasses-contacts#brands" },
       { label: "Lenses", href: "/eyeglasses-contacts#lenses" },
       { label: "Contact Lenses", href: "/eyeglasses-contacts#contacts" },
-      { label: "Myopia Management", href: "/eyeglasses-contacts#myopia" },
+      { label: "Myopia Control", href: "/eyeglasses-contacts#myopia" },
       { label: "Value Packages", href: "/eyeglasses-contacts#value" },
     ],
   },
@@ -76,20 +76,6 @@ export const mapLinks = {
   laCrosse: "https://maps.app.goo.gl/qxho7bt1oqfD9qzb6",
   holmen: "https://maps.app.goo.gl/NLYNV2SmeXfHooATA",
 };
-
-export const reasons = [
-  { value: "", label: "Choose a reason" },
-  { value: "Eye exam", label: "Comprehensive eye exam" },
-  { value: "Contact lenses", label: "Contact lens exam or fitting" },
-  { value: "Dry eye", label: "Dry eye" },
-  { value: "Glaucoma or cataract", label: "Glaucoma or cataract care" },
-  { value: "Myopia management", label: "Myopia management" },
-  { value: "LASIK", label: "LASIK consultation" },
-  { value: "Eyewear", label: "Eyewear or frames" },
-  { value: "Other", label: "Something else" },
-];
-
-export const timings = ["As soon as possible", "Weekday mornings", "Weekday afternoons", "Flexible"];
 
 export type ImageContent = { photo: string; src?: string };
 
@@ -163,10 +149,10 @@ export const medical: (ImageContent & { title: string; body: string; link: strin
     link: "About cataract care",
   },
   {
-    title: "Myopia Management",
+    title: "Myopia Control",
     photo: "Photo: child during an eye exam",
-    body: "For children whose nearsightedness is getting worse, we offer management options and follow their progress over time.",
-    link: "About myopia management",
+    body: "For children whose nearsightedness is getting worse, we offer options to slow progression and follow their progress over time.",
+    link: "About myopia control",
   },
 ];
 
@@ -183,11 +169,11 @@ export const designerBrands = [
   { name: "Coach", src: "/images/brands/coach.gif" },
   { name: "Hugo Boss", src: "/images/brands/hugo-boss.png" },
   { name: "Etnia Barcelona", src: "/images/brands/etnia-barcelona.png" },
-  { name: "Kate Spade New York", src: "/images/brands/kate-spade.png" },
+  { name: "Betsey Johnson", src: "/images/brands/betsey-johnson.png" },
   { name: "Nike Eyewear", src: "/images/brands/nike.gif" },
   { name: "Ray-Ban", src: "/images/brands/ray-ban.png" },
   { name: "Outspoken", src: "/images/brands/outspoken.png" },
-  { name: "Realtree", src: "/images/brands/realtree.png" },
+  { name: "OGI Eyewear", src: "/images/brands/ogi.png" },
   { name: "Seraphin", src: "/images/brands/seraphin.gif" },
   { name: "Yves Saint Laurent", src: "/images/brands/yves-saint-laurent.png" },
   { name: "Vera Bradley", src: "/images/brands/vera-bradley.png" },
@@ -198,13 +184,13 @@ export const featuredBrands = featuredBrandNames.map((n) => designerBrands.find(
 
 export const lensOptions = [
   { title: "Single Vision", body: "One prescription across the whole lens, for clear sight up close or at a distance." },
-  { title: "Progressives & Bifocals", body: "Near, middle and far vision in one pair, so you're not switching glasses through the day." },
-  { title: "Lens Coatings", body: "Anti-reflective and scratch-resistant options that cut glare and help your lenses last." },
+  { title: "Progressives & Bifocals", body: "Near, middle and far vision in one pair, so you're not switching glasses throughout the day." },
+  { title: "Lens Coatings", body: "Anti-reflective coatings that cut glare." },
   { title: "Sun & Light-Adapting Lenses", body: "Prescription sunglasses and lenses that darken outdoors, for comfort in bright light." },
 ];
 
 export const contactLensTypes = [
-  "Daily, two-week and monthly lenses",
+  "Daily, weekly, two-week and monthly lenses",
   "Lenses for astigmatism",
   "Multifocal contacts",
   "Help for first-time wearers",
@@ -267,7 +253,7 @@ export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
     src: "/images/doctors/jack.png",
     bio: [
       "Dr. Jack Latham, OD, joined Optical Fashions after graduating from the Illinois College of Optometry in May 2026. Growing up on a large dairy farm in Boscobel, WI, Dr. Latham developed an interest in optometry after an eye exam with his optometrist in high school. He went on to attend UW-Eau Claire, graduating in 2022, before earning his Doctor of Optometry degree from the Illinois College of Optometry.",
-      "Dr. Latham has a strong interest in ocular disease, specialty contact lenses, myopia management, and primary eye care. He is passionate about providing individual-based eye care to patients of all ages and is excited to begin his career in the La Crosse community. Dr. Latham is a member of both the Wisconsin Optometric Association and the American Optometric Association.",
+      "Dr. Latham has a strong interest in ocular disease, specialty contact lenses, myopia control, and primary eye care. He is passionate about providing individual-based eye care to patients of all ages and is excited to begin his career in the La Crosse community. Dr. Latham is a member of both the Wisconsin Optometric Association and the American Optometric Association.",
       "Outside of work, Dr. Latham enjoys fly fishing in the driftless area, camping at local and national parks, and trying new restaurants with his wife.",
     ],
   },
@@ -445,11 +431,12 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
     items: [
       {
         q: "How do I schedule an appointment?",
-        a: "Call us at (608) 782-7127 or send a request through our contact page. Our front desk will get back to you to confirm a day and time at the office that suits you best.",
+        a: "Schedule online in our patient portal, or call us at (608) 782-7127. Our front desk can help you find a time at the office that suits you best.",
+        links: [{ text: "patient portal", href: patientLinks.portal }],
       },
       {
         q: "Which office should I visit?",
-        a: "Whichever is easier for you. We have offices in La Crosse at 2104 WI-16 and in Holmen at 814 S. Main Street, and you can pick your preferred office when you request an appointment.",
+        a: "Whichever is easier for you. We have offices in La Crosse at 2104 WI-16 and in Holmen at 814 S. Main Street, and you can choose either office when you schedule.",
         links: [
           { text: "2104 WI-16", href: mapLinks.laCrosse },
           { text: "814 S. Main Street", href: mapLinks.holmen },
@@ -484,7 +471,8 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
       },
       {
         q: "Can I see my records online?",
-        a: "Yes. Our patient portal, powered by RevolutionEHR, lets you view your records and manage your information securely.",
+        a: "Yes. Our patient portal lets you view your records, manage your information, and schedule appointments securely.",
+        links: [{ text: "patient portal", href: patientLinks.portal }],
       },
     ],
   },
@@ -494,15 +482,15 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
     items: [
       {
         q: "What eye conditions do you treat?",
-        a: "Our doctors diagnose and manage dry eye, glaucoma, cataracts, pink eye, and sudden eye pain or vision changes. We also offer myopia management for children and teens.",
+        a: "Our doctors diagnose and manage dry eye, glaucoma, cataracts, pink eye, and sudden eye pain or vision changes. We also offer myopia control for children and teens.",
       },
       {
         q: "Do you offer same-day appointments?",
         a: "Yes. For urgent concerns like pink eye, eye pain or a sudden change in vision, call us at (608) 782-7127 and we'll do our best to see you the same day.",
       },
       {
-        q: "What is myopia management?",
-        a: "Myopia management, sometimes called myopia control, is a plan to monitor a child's nearsightedness and slow its progression. One option we offer is Stellest lenses, the first FDA-approved glasses for slowing myopia in kids and teens.",
+        q: "What is myopia control?",
+        a: "Myopia control is a plan to monitor a child's nearsightedness and slow its progression. One option we offer is Stellest lenses, the first FDA-approved glasses for slowing myopia in kids and teens.",
       },
       {
         q: "Do you provide LASIK co-management?",
@@ -516,13 +504,13 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
     items: [
       {
         q: "What frame brands do you carry?",
-        a: "We carry designer frames from brands like Gucci, YSL, Coach, Carolina Herrera, Nike, Ray-Ban, Oakley and Kate Spade, along with a wide range of other styles. Our opticians will help you find a pair that fits your face and your prescription.",
+        a: "We carry designer frames from brands like Gucci, YSL, Coach, Carolina Herrera, Nike, Ray-Ban, Oakley and OGI, along with a wide range of other styles. Our opticians will help you find a pair that fits your face and your prescription.",
       },
-      { q: "Do you provide contact lens fittings?", a: "Yes. Our doctors fit contact lenses, and we offer convenient contact lens ordering and reordering through FAIT." },
-      { q: "How do I order or reorder contact lenses?", a: "We offer convenient contact lens ordering and reordering through FAIT. Order online anytime and have your lenses shipped to you." },
+      { q: "Do you provide contact lens fittings?", a: "Yes. Our doctors fit contact lenses, and you can order or reorder them online and have them shipped to you." },
+      { q: "How do I order or reorder contact lenses?", a: "Order or reorder contact lenses online anytime and have them shipped to you." },
       {
         q: "Do you have options for patients without vision insurance?",
-        a: "Yes. If you don't have vision insurance, you'll save 25% on your eye exam and 10% on glasses when you pay on the day of your visit. We also offer value packages and promotions on glasses and contacts, so ask our team about current offers.",
+        a: "Yes. If you don't have vision insurance, you'll save 25% on your eye exam and 20% on glasses when you pay on the day of your visit. We also offer value packages and promotions on glasses, and special deals on a year's supply of contact lenses.",
       },
     ],
   },
@@ -532,7 +520,7 @@ const allFaqs = faqGroups.flatMap((g) => g.items);
 const homeFaqQuestions = [
   "How often should I have an eye exam?",
   "When should children have eye exams?",
-  "What is myopia management?",
+  "What is myopia control?",
   "Do you provide contact lens fittings?",
   "Do you provide LASIK co-management?",
   "What should I do if I have an urgent eye concern?",
@@ -625,10 +613,6 @@ export const patientForms: { title: string; body: string; href?: string }[] = [
     href: "https://forms.gle/enw6rEEZe6Z9qyz68",
   },
   {
-    title: "Existing Patient Form",
-    body: "Coming back to see us? Update your contact details, insurance, medications and any new allergies.",
-  },
-  {
     title: "Release of Health Information",
     body: "Authorize us to send or receive copies of your eye care records, for example to or from another doctor.",
     href: "https://forms.gle/h3vCV8uuXPXMPhGx8",
@@ -640,7 +624,7 @@ export const careServices: NavLink[] = [
   { label: "Medical Eye Care", href: "/eye-care-services#medical" },
   { label: "Dry Eye Care", href: "/eye-care-services#dry-eye" },
   { label: "Cataract & Glaucoma Care", href: "/eye-care-services#cataracts" },
-  { label: "Myopia Management & Control", href: "/eyeglasses-contacts#myopia" },
+  { label: "Myopia Control", href: "/eyeglasses-contacts#myopia" },
   { label: "Contact Lenses & Eyewear", href: "/eyeglasses-contacts" },
   { label: "Pre-/Post-Operative Care", href: "/eye-care-services#surgery" },
   { label: "Same-Day Medical Eye Care", href: "/eye-care-services#same-day" },
@@ -683,7 +667,7 @@ export const medicalConditions: { id: string; title: string; body: string; sameD
   },
   {
     id: "myopia-control",
-    title: "Myopia Management / Myopia Control",
+    title: "Myopia Control",
     body: "For children whose nearsightedness is getting worse. We monitor progression and offer options, including Stellest lenses, aimed at slowing it.",
   },
   {

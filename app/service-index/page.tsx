@@ -77,7 +77,7 @@ const serviceGroups: { id: string; title: string; summary: string; href: string;
       },
       {
         name: "Contact Lens Exams & Fittings",
-        description: `Contact lens exams and fittings by our doctors, with ${contactLensTypes.join(", ").toLowerCase()}. Convenient contact lens ordering and reordering through FAIT.`,
+        description: `Contact lens exams and fittings by our doctors, with ${contactLensTypes.join(", ").toLowerCase()}. Order or reorder contact lenses online and have them shipped to you.`,
         href: "/eyeglasses-contacts#contacts",
       },
     ],
@@ -107,7 +107,10 @@ const glance: { label: string; value: ReactNode }[] = [
     label: "How to book",
     value: (
       <>
-        Call {contact.phone} or <a href="/contact#book">request an appointment online</a>
+        Call {contact.phone} or{" "}
+        <a href={patientLinks.portal} target="_blank" rel="noopener noreferrer">
+          schedule in the patient portal
+        </a>
       </>
     ),
   },
@@ -229,7 +232,7 @@ export default function ServiceIndexPage() {
           </div>
           <div>
             <dt>No vision insurance</dt>
-            <dd>Save 25% on your eye exam and 10% on glasses when you pay on the day of your visit.</dd>
+            <dd>Save 25% on your eye exam and 20% on glasses when you pay on the day of your visit. Value packages and promotions are available on glasses, and special deals are available on a year&apos;s supply of contact lenses.</dd>
           </div>
           <div>
             <dt>Payment</dt>
@@ -266,14 +269,14 @@ export default function ServiceIndexPage() {
               Patient Portal
               <span className={styles.srOnly}> (opens in a new tab)</span>
             </a>
-            <span>View your records and manage your information securely through RevolutionEHR.</span>
+            <span>View your records, manage your information, and schedule appointments in the patient portal.</span>
           </li>
           <li>
             <a href={patientLinks.contactLenses} target="_blank" rel="noopener noreferrer">
               Order Contact Lenses
               <span className={styles.srOnly}> (opens in a new tab)</span>
             </a>
-            <span>Convenient contact lens ordering and reordering through FAIT.</span>
+            <span>Order or reorder contact lenses online and have them shipped to you.</span>
           </li>
           <li>
             <a href="/faq">Frequently Asked Questions</a>
