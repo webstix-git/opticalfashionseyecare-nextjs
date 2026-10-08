@@ -35,13 +35,13 @@ export default function Eyewear() {
             </div>
           </div>
           <div data-reveal="" className={styles.tall}>
-            <ImageSlot placeholder={main.photo} src={main.src} alt={main.alt} position="30% center" sizes="(max-width: 900px) 100vw, 33vw" />
+            <ImageSlot placeholder={main.photo} src={main.src} alt={main.alt} sizes="(max-width: 900px) 100vw, 33vw" />
           </div>
           <div data-reveal="" className={styles.square}>
-            <ImageSlot placeholder={detailA.photo} src={detailA.src} alt={detailA.alt} position="70% center" sizes="(max-width: 900px) 50vw, 33vw" />
+            <ImageSlot placeholder={detailA.photo} src={detailA.src} alt={detailA.alt} sizes="(max-width: 900px) 50vw, 33vw" />
           </div>
           <div data-reveal="" className={styles.square}>
-            <ImageSlot placeholder={detailB.photo} src={detailB.src} alt={detailB.alt} position="center 55%" sizes="(max-width: 900px) 50vw, 33vw" />
+            <ImageSlot placeholder={detailB.photo} src={detailB.src} alt={detailB.alt} sizes="(max-width: 900px) 50vw, 33vw" />
           </div>
         </div>
         <div data-reveal="" className={styles.brands}>

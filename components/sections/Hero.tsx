@@ -18,8 +18,8 @@ export default function Hero() {
   return (
     <section aria-labelledby="hero-h" className={styles.hero}>
       <Image
-        src="/images/hero-wide.png"
-        alt="An Optical Fashions optometrist talking with a patient in the exam room"
+        src="/eye-test.jpg"
+        alt="Smiling patient resting her chin on a slit lamp while an Optical Fashions optometrist examines her eyes"
         fill
         loading="eager"
         fetchPriority="high"

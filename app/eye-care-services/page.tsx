@@ -45,8 +45,9 @@ export default function EyeCareServicesPage() {
       <main id="main">
         <PageHero
           crumb="Eye Care Services"
-          image="/images/eye-care-services-banner.jpg"
-          imageSize={{ width: 1024, height: 436 }}
+          image="/images/eye-care-services-hero.png"
+          imageSize={{ width: 932, height: 436 }}
+          softOverlay
           title="Eye Care Services"
           intro="Eye exams, medical eye care and surgical follow-up from doctors in La Crosse and Holmen who explain every step."
           actions={

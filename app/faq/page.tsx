@@ -34,8 +34,9 @@ export default function FaqPage() {
       <main id="main">
         <PageHero
           crumb="FAQ"
-          image="/images/hero-wide.png"
-          imagePosition="center 45%"
+          image="/images/eye-care-services-hero.png"
+          imageSize={{ width: 932, height: 436 }}
+          softOverlay
           title="Frequently Asked Questions"
           intro="Everything you might want to know before your visit, from booking and insurance to eye exams, medical care, glasses and contacts."
         />

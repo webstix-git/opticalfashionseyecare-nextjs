@@ -106,9 +106,8 @@ export default function EyeglassesContactsPage() {
             <div data-reveal="" className={`${styles.media} ${styles.landscape}`}>
               <ImageSlot
                 placeholder="Photo: patient trying on glasses at the mirror in the optical shop"
-                src="/images/eyewear/optical-shop-mirror.jpg"
-                alt="Smiling man trying on dark rectangular glasses in front of a mirror beside a wall of lit frame displays"
-                position="60% center"
+                src="/images/eyewear/optical-shop-try-on.jpg"
+                alt="Man trying on tortoiseshell glasses while looking at his reflection in a mirror"
                 sizes="(max-width: 900px) 100vw, 50vw"
               />
             </div>
@@ -143,9 +142,8 @@ export default function EyeglassesContactsPage() {
               <div data-reveal="" className={`${styles.media} ${styles.landscape}`}>
                 <ImageSlot
                   placeholder="Photo: eyeglass frames on lit glass shelves in the optical shop"
-                  src="/images/eyewear/eyeglasses-banner.jpg"
-                  alt="Rows of eyeglass frames on lit glass shelves in a bright optical shop"
-                  position="80% center"
+                  src="/images/eyewear/lenses-display.jpg"
+                  alt="Optician holding a display of tinted lens samples in front of a wall of frames"
                   sizes="(max-width: 900px) 100vw, 50vw"
                 />
               </div>
@@ -241,7 +239,7 @@ export default function EyeglassesContactsPage() {
               </a>
             </div>
             <div className={styles.myopiaMedia}>
-              <ImageSlot placeholder={myopiaPhoto.photo} src={myopiaPhoto.src} alt={myopiaPhoto.alt} position="60% center" sizes="(max-width: 900px) 100vw, 50vw" />
+              <ImageSlot placeholder={myopiaPhoto.photo} src={myopiaPhoto.src} alt={myopiaPhoto.alt} position="15% center" sizes="(max-width: 900px) 100vw, 50vw" />
             </div>
           </div>
         </section>

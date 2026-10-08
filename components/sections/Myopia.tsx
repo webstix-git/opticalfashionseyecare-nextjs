@@ -1,5 +1,5 @@
 import ImageSlot from "@/components/ImageSlot";
-import { myopiaPhoto } from "@/lib/content";
+import { familiesPhoto } from "@/lib/content";
 import styles from "./Myopia.module.css";
 
 export default function Myopia() {
@@ -24,7 +24,7 @@ export default function Myopia() {
           </a>
         </div>
         <div className={styles.photo}>
-          <ImageSlot placeholder={myopiaPhoto.photo} src={myopiaPhoto.src} alt={myopiaPhoto.alt} position="60% center" sizes="(max-width: 900px) 100vw, 50vw" />
+          <ImageSlot placeholder={familiesPhoto.photo} src={familiesPhoto.src} alt={familiesPhoto.alt} position="15% center" sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </div>
     </section>

@@ -1,17 +1,17 @@
 import ImageSlot from "@/components/ImageSlot";
-import { aboutPhoto } from "@/lib/content";
+import { aboutPhoto, type ImageContent } from "@/lib/content";
 import styles from "./About.module.css";
 
-export default function About() {
+export default function About({ photo = aboutPhoto }: { photo?: ImageContent & { alt: string } }) {
   return (
     <section id="about" aria-labelledby="intro-h" className={styles.band}>
       <div className={`container ${styles.section}`}>
         <div data-reveal="" className={styles.media}>
           <div className={styles.photo}>
             <ImageSlot
-              placeholder={aboutPhoto.photo}
-              src={aboutPhoto.src}
-              alt={aboutPhoto.alt}
+              placeholder={photo.photo}
+              src={photo.src}
+              alt={photo.alt}
               position="center"
               sizes="(max-width: 900px) 100vw, 45vw"
             />

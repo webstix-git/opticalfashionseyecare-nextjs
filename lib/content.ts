@@ -81,15 +81,21 @@ export type ImageContent = { photo: string; src?: string };
 
 export const aboutPhoto: ImageContent & { alt: string } = {
   photo: "Photo: optometrist examining a patient at the slit lamp",
-  src: "/images/about-eye-exam.jpg",
-  alt: "Optometrist in a white coat examining an older patient's eyes with a slit lamp during an eye exam",
+  src: "/images/home-about-eye-exam.jpg",
+  alt: "Smiling optometrist in a white coat talking with a patient seated at the slit lamp",
+};
+
+export const aboutPagePhoto: ImageContent & { alt: string } = {
+  photo: "Photo: optometrist examining a patient at the slit lamp",
+  src: "/images/about-page-eye-exam.jpg",
+  alt: "Optometrist looking through a slit lamp to examine a patient's eyes",
 };
 
 export const services: (ImageContent & { title: string; body: string; cta: string; href?: string; alt?: string; position?: string })[] = [
   {
     photo: "Photo: comprehensive eye exam in progress, doctor at the slit lamp with patient",
-    src: "/images/service-eye-exam.jpg",
-    alt: "Optometrist examining a smiling young girl's eyes at the slit lamp",
+    src: "/images/home-comprehensive-eye-exam.jpg",
+    alt: "Smiling woman resting her chin on a slit lamp while the optometrist examines her eyes",
     title: "Comprehensive Eye Exams",
     body: "A thorough look at your vision and eye health for adults and children, with your doctor explaining what they find.",
     cta: "What to expect at your exam",
@@ -158,8 +164,14 @@ export const medical: (ImageContent & { title: string; body: string; link: strin
 
 export const myopiaPhoto: ImageContent & { alt: string } = {
   photo: "Photo: school-age child trying on glasses with a parent nearby, relaxed and smiling",
-  src: "/images/myopia-child-mirror.jpg",
-  alt: "Smiling young girl trying on pink glasses while her mother watches and an optician holds up a mirror",
+  src: "/opticalfashion/7.jpeg",
+  alt: "Young girl adjusting her black glasses in front of a blurred eye chart",
+};
+
+export const familiesPhoto: ImageContent & { alt: string } = {
+  photo: "Photo: child wearing glasses in front of an eye chart",
+  src: "/images/home-children-families.jpg",
+  alt: "Young girl adjusting her black glasses in front of a blurred eye chart",
 };
 
 export const designerBrands = [
@@ -199,18 +211,18 @@ export const contactLensTypes = [
 export const eyewearPhotos: (ImageContent & { alt?: string })[] = [
   {
     photo: "Photo: patient trying on designer frames at the mirror with an optician",
-    src: "/images/eyewear/frame-fitting.jpg",
-    alt: "Smiling woman trying on tortoiseshell glasses at a mirror while an optician helps her choose frames",
+    src: "/images/eyewear/home-frame-try-on.jpg",
+    alt: "Smiling woman trying on round metal glasses in front of a wall of frames",
   },
   {
     photo: "Photo: frames on display",
-    src: "/images/eyewear/frames-display.jpg",
-    alt: "Rows of designer eyeglass frames displayed on bright white shelves",
+    src: "/images/eyewear/home-frames-rack.jpg",
+    alt: "Hand picking a pair of black eyeglass frames from a display rack",
   },
   {
     photo: "Photo: frame detail, hinge or temple",
-    src: "/images/eyewear/frame-lenses.jpg",
-    alt: "Tortoiseshell eyeglass frame resting on a table beside uncut lens blanks",
+    src: "/images/eyewear/home-frame-handoff.jpg",
+    alt: "Optician handing a pair of tortoiseshell glasses to a patient across a table",
   },
 ];
 
@@ -634,8 +646,8 @@ export const footerServices = careServices;
 
 export const examPhoto: ImageContent & { alt: string; position?: string } = {
   photo: "Photo: doctor at the slit lamp with a patient during a comprehensive exam",
-  src: "/images/about-eye-exam.jpg",
-  alt: "Optometrist in a white coat examining a patient's eyes at the slit lamp",
+  src: "/images/comprehensive-exam-eye-drops.jpg",
+  alt: "Doctor in blue gloves applying eye drops for an older woman during an eye exam",
 };
 
 export const examAges: { label: string; text: string }[] = [
@@ -690,9 +702,8 @@ export const surgeryCare: (ImageContent & { title: string; body: string; include
     body: "We help you decide whether LASIK is a good option, then provide your pre-op evaluation and post-op follow-up care here in La Crosse or Holmen.",
     includes: ["Candidacy evaluation", "Pre-op exam", "Post-op follow-up"],
     photo: "Photo: adult patient in a LASIK consultation",
-    src: "/images/lasik-consultation.jpg",
-    alt: "Doctor using an eye model to explain LASIK to a patient, with eye scans on a monitor behind",
-    position: "68% center",
+    src: "/images/lasik-procedure.jpg",
+    alt: "Close-up of a laser beam directed at a patient's eye during a LASIK procedure",
   },
   {
     title: "Cataract Surgery Care",
@@ -708,8 +719,7 @@ export const surgeryCare: (ImageContent & { title: string; body: string; include
     body: "For other eye surgeries, we coordinate with your surgeon and provide follow-up visits so you can recover with doctors who know you.",
     includes: ["Surgeon coordination", "Post-op follow-up"],
     photo: "Photo: doctor checking in with a patient at a follow-up visit",
-    src: "/images/hero-wide.png",
-    alt: "Optometrist reviewing results on a tablet with a patient in the clinic",
-    position: "72% center",
+    src: "/images/other-surgical-care.jpg",
+    alt: "Surgical team in scrubs operating an eye surgery laser system on a patient",
   },
 ];

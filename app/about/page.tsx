@@ -9,7 +9,7 @@ import InsurancePlans from "@/components/InsurancePlans";
 import About from "@/components/sections/About";
 import Careers from "@/components/sections/Careers";
 import CareTabs from "@/components/CareTabs";
-import { contact, doctors, why, type NavLink } from "@/lib/content";
+import { aboutPagePhoto, contact, doctors, why, type NavLink } from "@/lib/content";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -56,8 +56,8 @@ export default function AboutPage() {
       <main id="main" className={styles.main}>
         <PageHero
           crumb="About Us"
-          image="/images/about-eye-exam.jpg"
-          imagePosition="center 25%"
+          image="/images/about-hero.png"
+          imageSize={{ width: 951, height: 436 }}
           lightOverlay
           title="About Optical Fashions"
           intro="A locally owned eye care clinic serving La Crosse and Holmen since 1962. Meet our doctors, see which insurance plans we accept, or come work with us."
@@ -65,7 +65,7 @@ export default function AboutPage() {
 
         <CareTabs tabs={tabs} />
 
-        <About />
+        <About photo={aboutPagePhoto} />
 
         <section id="why" aria-labelledby="why-h" className={`${styles.band} ${styles.alt}`}>
           <div className={`container ${styles.section}`}>
