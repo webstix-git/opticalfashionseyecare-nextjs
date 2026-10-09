@@ -422,8 +422,14 @@ export const googleReviewLocations: { id: string; label: string; rating: string;
   },
 ];
 
+const patientPortals = [
+  { location: "La Crosse", href: "https://revolutionehr.com/patient-portal/login/opticalfashionslax/" },
+  { location: "Holmen", href: "https://revolutionehr.com/patient-portal/login/opticalfashionshlm/" },
+];
+
 export const patientLinks = {
-  portal: "https://revolutionehr.com/patient-portal/login/opticalfashionslax/",
+  portal: patientPortals[0].href,
+  portals: patientPortals,
   contactLenses: "https://yourstore.wewillship.com/?account_id=1024",
 };
 

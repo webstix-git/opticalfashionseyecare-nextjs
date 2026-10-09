@@ -150,6 +150,12 @@
   border-top: 1px solid var(--card-line);
 }
 
+.portalButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .formList {
   margin: 0;
   padding: 0;

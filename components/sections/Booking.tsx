@@ -25,17 +25,23 @@ export default function Booking() {
       <div data-reveal="" className={styles.card}>
         <div className={styles.schedule}>
           <h3>Book Your Visit</h3>
-          <p>Schedule online through the patient portal, or call our office. Both clinics share one phone number.</p>
+          <p>Schedule online through your clinic&apos;s patient portal, or call our office. Both clinics share one phone number.</p>
           <div className={styles.actions}>
-            <a
-              href={patientLinks.portal}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-              aria-label="Schedule in the Patient Portal (opens in a new tab)"
-            >
-              Schedule in the Patient Portal
-            </a>
+            <div className={styles.portalActions}>
+              {patientLinks.portals.map((p) => (
+                <a
+                  key={p.href}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`btn btn-primary ${styles.portalButton}`}
+                  aria-label={`Schedule an Appointment in ${p.location} (opens in a new tab)`}
+                >
+                  Schedule an Appointment
+                  <span className={styles.portalLocation}>{p.location}</span>
+                </a>
+              ))}
+            </div>
             <a href={contact.phoneHref} className="btn btn-outline">
               <PhoneIcon />
               Call {contact.phone}

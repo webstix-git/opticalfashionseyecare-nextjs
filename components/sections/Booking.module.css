@@ -88,3 +88,20 @@
   white-space: normal;
   text-align: center;
 }
+
+.portalActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 12px;
+}
+
+.portalButton {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.portalLocation {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.85;
+}

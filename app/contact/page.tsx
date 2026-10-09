@@ -140,9 +140,20 @@ export default function ContactPage() {
                 </div>
                 <div className={styles.portal}>
                   <p className={styles.infoText}>Already a patient? View your records and manage your information in our secure patient portal.</p>
-                  <a href={patientLinks.portal} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                    Open Patient Portal
-                  </a>
+                  <div className={styles.portalButtons}>
+                    {patientLinks.portals.map((p) => (
+                      <a
+                        key={p.href}
+                        href={p.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-outline"
+                        aria-label={`${p.location} Patient Portal (opens in a new tab)`}
+                      >
+                        {p.location} Portal
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
               <ul className={styles.formList}>

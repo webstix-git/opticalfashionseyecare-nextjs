@@ -80,9 +80,7 @@ export default function SiteHeader() {
             </a>
           </div>
           <div className={`${styles.utilityGroup} ${styles.utilityLinks}`}>
-            <a href={patientLinks.portal} target="_blank" rel="noopener noreferrer" aria-label="Patient Portal (opens in a new tab)">
-              Patient Portal
-            </a>
+            <a href="/contact#forms">Patient Portal</a>
             <a href={patientLinks.contactLenses} target="_blank" rel="noopener noreferrer" aria-label="Order Contacts (opens in a new tab)">
               Order Contacts
             </a>
@@ -196,7 +194,7 @@ export default function SiteHeader() {
             </div>
           ))}
           <div className={styles.mobileExtra}>
-            <a href={patientLinks.portal} target="_blank" rel="noopener noreferrer" aria-label="Patient Portal (opens in a new tab)" onClick={closeMenu}>
+            <a href="/contact#forms" onClick={closeMenu}>
               Patient Portal
             </a>
             <a href={patientLinks.contactLenses} target="_blank" rel="noopener noreferrer" aria-label="Order Contacts (opens in a new tab)" onClick={closeMenu}>
