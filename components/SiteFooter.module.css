@@ -255,11 +255,16 @@
   flex-wrap: wrap;
   color: var(--muted);
   font-size: 0.875rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .legal {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .legal a {
@@ -268,4 +273,10 @@
 
 .legal a:hover {
   color: var(--navy);
+}
+
+@media (max-width: 560px) {
+  .legal {
+    gap: 10px 16px;
+  }
 }
