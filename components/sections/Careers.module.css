@@ -95,7 +95,7 @@
 }
 
 .label {
-  margin: 4px 0 16px;
+  margin: 4px 0 12px;
   font-family: var(--font-heading);
   font-size: 0.8125rem;
   font-weight: 700;
@@ -108,17 +108,22 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 28px;
+  column-count: 2;
+  column-gap: 28px;
 }
 
 .duties li {
   position: relative;
+  margin: 0 0 12px;
   padding-left: 20px;
+  break-inside: avoid;
   font-size: 0.9375rem;
   line-height: 1.5;
   color: var(--ink);
+}
+
+.duties li:last-child {
+  margin-bottom: 0;
 }
 
 .duties li::before {
@@ -339,9 +344,12 @@
 @media (max-width: 560px) {
   .skills,
   .facts,
-  .benefitList,
-  .duties {
+  .benefitList {
     grid-template-columns: 1fr;
+  }
+
+  .duties {
+    column-count: 1;
   }
 }
 

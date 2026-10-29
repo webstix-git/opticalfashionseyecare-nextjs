@@ -18,8 +18,8 @@ export const eyeCareSectionTabs: NavLink[] = [
 ];
 
 export const contactSectionTabs: NavLink[] = [
-  { label: "Locations & Hours", href: "#locations" },
   { label: "Schedule an Appointment", href: "#book" },
+  { label: "Locations & Hours", href: "#locations" },
   { label: "Insurance", href: "#insurance" },
   { label: "Patient Forms", href: "#forms" },
 ];
@@ -33,8 +33,8 @@ export const headerNav: HeaderNavLink[] = [
       { label: "Our Story", href: "/about#about" },
       { label: "Why Choose Us", href: "/about#why" },
       { label: "Our Doctors", href: "/about#doctors" },
-      { label: "Careers", href: "/about#careers" },
       { label: "Insurance", href: "/about#insurance" },
+      { label: "Careers", href: "/about#careers" },
     ],
   },
   {
@@ -337,7 +337,7 @@ export const googleReviewLocations: { id: string; label: string; rating: string;
     label: "La Crosse",
     rating: "4.9",
     count: "1,542",
-    url: "https://www.google.com/search?q=Optical+Fashions+Eye+Care+Clinic+La+Crosse+reviews",
+    url: "https://www.google.com/maps/place/Optical+Fashions+Eye+Care+Clinic+La+Crosse/@43.8525738,-91.210876,17z/data=!4m8!3m7!1s0x87feab52c04f657f:0x1554f5632dd19afb!8m2!3d43.8525738!4d-91.210876!9m1!1b1!16s%2Fg%2F1tdxlflx",
     reviews: [
       {
         title: "",
@@ -381,7 +381,7 @@ export const googleReviewLocations: { id: string; label: string; rating: string;
     label: "Holmen",
     rating: "4.9",
     count: "203",
-    url: "https://www.google.com/search?q=Optical+Fashions+Eye+Care+Clinic+Holmen+reviews",
+    url: "https://www.google.com/maps/place/Optical+Fashions+Eye+Care+Clinic+Holmen/@43.9577907,-91.2573925,17z/data=!4m8!3m7!1s0x87f94da2577a870f:0x257204d3e5c970b4!8m2!3d43.9577907!4d-91.2573925!9m1!1b1!16s%2Fg%2F11f29xs3pq",
     reviews: [
       {
         title: "",
@@ -449,13 +449,17 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
     items: [
       {
         q: "How do I schedule an appointment?",
-        a: "Schedule online in our patient portal, or call us at (608) 782-7127. Our front desk can help you find a time at the office that suits you best.",
-        links: [{ text: "patient portal", href: patientLinks.portal }],
+        a: "Current patients can schedule through their patient portal or call the office. New patients, please call the office to schedule an appointment. You can reach us at (608) 782-7127.",
+        links: [
+          { text: "patient portal", href: patientLinks.portal },
+          { text: "schedule an appointment", href: "/contact#book" },
+        ],
       },
       {
         q: "Which office should I visit?",
         a: "Whichever is easier for you. We have offices in La Crosse at 2104 WI-16 and in Holmen at 814 S. Main Street, and you can choose either office when you schedule.",
         links: [
+          { text: "offices", href: "/contact#locations" },
           { text: "2104 WI-16", href: mapLinks.laCrosse },
           { text: "814 S. Main Street", href: mapLinks.holmen },
         ],
@@ -463,14 +467,21 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
       {
         q: "What should I bring to my appointment?",
         a: "Bring your current glasses and contact lenses, a list of any medications you take, and your vision and medical insurance cards.",
+        links: [
+          { text: "glasses", href: "/eyeglasses-contacts#brands" },
+          { text: "contact lenses", href: "/eyeglasses-contacts#contacts" },
+          { text: "insurance", href: "/about#insurance" },
+        ],
       },
       {
         q: "Do you accept my insurance?",
-        a: "We accept Blue View Vision, EyeMed and VSP vision plans, plus many medical plans including Medicare, Blue Cross Blue Shield, Humana, Quartz and UnitedHealthcare. You'll find the full list on our About page. If you don't see your plan, call us at (608) 782-7127 and we'll help you check your coverage.",
+        a: "We accept Blue View Vision, EyeMed and VSP vision plans, plus many medical plans including Medicare, Blue Cross Blue Shield, Humana, Quartz and UnitedHealthcare. You'll find the full list on our About Us page. If you don't see your plan, call us at (608) 782-7127 and we'll help you check your coverage.",
+        links: [{ text: "About Us", href: "/about#insurance" }],
       },
       {
         q: "What should I do if I have an urgent eye concern?",
         a: "Call the office as soon as possible at (608) 782-7127. We offer same-day urgent eye care. For a severe injury, seek emergency care.",
+        links: [{ text: "same-day urgent eye care", href: "/eye-care-services#same-day" }],
       },
     ],
   },
@@ -478,19 +489,36 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
     id: "exams",
     title: "Eye Exams",
     items: [
-      { q: "How often should I have an eye exam?", a: "It depends on your age, eye health and risk factors. Your doctor will recommend a schedule that fits you." },
+      {
+        q: "How often should I have an eye exam?",
+        a: "It depends on your age, eye health and risk factors. Your doctor will recommend an eye exam schedule that fits you.",
+        links: [{ text: "eye exam", href: "/eye-care-services#exams" }],
+      },
       {
         q: "When should children have eye exams?",
         a: "The American Optometric Association recommends a child's first eye exam between 6 and 12 months of age, at least one exam between ages 3 and 5, another before first grade, and then once a year. Our doctors will suggest a schedule that fits your child's needs.",
+        links: [{ text: "eye exam", href: "/eye-care-services#exams" }],
       },
       {
         q: "What's the difference between a routine and a medical eye exam?",
         a: "A routine eye exam checks your vision and overall eye health and updates your glasses or contact lens prescription. A medical eye exam focuses on a specific concern or condition, such as dry eye, an eye infection, glaucoma or a sudden change in vision.",
+        links: [
+          { text: "routine eye exam", href: "/eye-care-services#exams" },
+          { text: "glasses", href: "/eyeglasses-contacts#brands" },
+          { text: "contact lens", href: "/eyeglasses-contacts#contacts" },
+          { text: "medical eye exam", href: "/eye-care-services#medical-exams" },
+          { text: "dry eye", href: "/eye-care-services#dry-eye" },
+          { text: "glaucoma", href: "/eye-care-services#glaucoma" },
+          { text: "sudden change in vision", href: "/eye-care-services#sudden-changes" },
+        ],
       },
       {
         q: "Can I see my records online?",
         a: "Yes. Our patient portal lets you view your records, manage your information, and schedule appointments securely.",
-        links: [{ text: "patient portal", href: patientLinks.portal }],
+        links: [
+          { text: "patient portal", href: patientLinks.portal },
+          { text: "schedule appointments", href: "/contact#book" },
+        ],
       },
     ],
   },
@@ -501,18 +529,39 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
       {
         q: "What eye conditions do you treat?",
         a: "Our doctors diagnose and manage dry eye, glaucoma, cataracts, pink eye, and sudden eye pain or vision changes. We also offer myopia control for children and teens.",
+        links: [
+          { text: "dry eye", href: "/eye-care-services#dry-eye" },
+          { text: "glaucoma", href: "/eye-care-services#glaucoma" },
+          { text: "cataracts", href: "/eye-care-services#cataracts" },
+          { text: "pink eye", href: "/eye-care-services#pink-eye" },
+          { text: "sudden eye pain or vision changes", href: "/eye-care-services#sudden-changes" },
+          { text: "myopia control", href: "/eye-care-services#myopia-control" },
+        ],
       },
       {
         q: "Do you offer same-day appointments?",
         a: "Yes. For urgent concerns like pink eye, eye pain or a sudden change in vision, call us at (608) 782-7127 and we'll do our best to see you the same day.",
+        links: [
+          { text: "pink eye", href: "/eye-care-services#pink-eye" },
+          { text: "sudden change in vision", href: "/eye-care-services#sudden-changes" },
+          { text: "same day", href: "/eye-care-services#same-day" },
+        ],
       },
       {
         q: "What is myopia control?",
         a: "Myopia control is a plan to monitor a child's nearsightedness and slow its progression. One option we offer is Stellest lenses, the first FDA-approved glasses for slowing myopia in kids and teens.",
+        links: [
+          { text: "Myopia control", href: "/eyeglasses-contacts#myopia" },
+          { text: "Stellest lenses", href: "/eyeglasses-contacts#myopia" },
+        ],
       },
       {
         q: "Do you provide LASIK co-management?",
-        a: "Yes. We provide evaluation before surgery and follow-up care afterward, close to home. We also offer pre- and post-operative care for other eye surgeries.",
+        a: "Yes. We provide LASIK co-management with evaluation before surgery and follow-up care afterward, close to home. We also offer pre- and post-operative care for other eye surgeries.",
+        links: [
+          { text: "LASIK co-management", href: "/eye-care-services#surgery" },
+          { text: "pre- and post-operative care", href: "/eye-care-services#surgery" },
+        ],
       },
     ],
   },
@@ -523,12 +572,34 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
       {
         q: "What frame brands do you carry?",
         a: "We carry designer frames from brands like Gucci, YSL, Coach, Carolina Herrera, Nike, Ray-Ban, Oakley and OGI, along with a wide range of other styles. Our opticians will help you find a pair that fits your face and your prescription.",
+        links: [{ text: "designer frames", href: "/eyeglasses-contacts#brands" }],
       },
-      { q: "Do you provide contact lens fittings?", a: "Yes. Our doctors fit contact lenses, and you can order or reorder them online and have them shipped to you." },
-      { q: "How do I order or reorder contact lenses?", a: "Order or reorder contact lenses online anytime and have them shipped to you." },
+      {
+        q: "Do you provide contact lens fittings?",
+        a: "Yes. Our doctors fit contact lenses, and you can order or reorder them online and have them shipped to you.",
+        links: [
+          { text: "contact lenses", href: "/eyeglasses-contacts#contacts" },
+          { text: "order or reorder them online", href: patientLinks.contactLenses },
+        ],
+      },
+      {
+        q: "How do I order or reorder contact lenses?",
+        a: "Order or reorder contact lenses online anytime and have them shipped to you.",
+        links: [
+          { text: "contact lenses", href: "/eyeglasses-contacts#contacts" },
+          { text: "online", href: patientLinks.contactLenses },
+        ],
+      },
       {
         q: "Do you have options for patients without vision insurance?",
         a: "Yes. If you don't have vision insurance, you'll save 25% on your eye exam and 20% on glasses when you pay on the day of your visit. We also offer value packages and promotions on glasses, and special deals on a year's supply of contact lenses.",
+        links: [
+          { text: "vision insurance", href: "/about#insurance" },
+          { text: "eye exam", href: "/eye-care-services#exams" },
+          { text: "glasses", href: "/eyeglasses-contacts#brands" },
+          { text: "value packages", href: "/eyeglasses-contacts#value" },
+          { text: "contact lenses", href: "/eyeglasses-contacts#contacts" },
+        ],
       },
     ],
   },

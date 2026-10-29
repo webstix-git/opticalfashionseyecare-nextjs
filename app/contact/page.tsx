@@ -71,6 +71,10 @@ export default function ContactPage() {
 
           <CareTabs tabs={contactSectionTabs} />
 
+          <div className={styles.bookingBand}>
+            <Booking />
+          </div>
+
           <section id="locations" aria-labelledby="loc-h" className={styles.locationsBand}>
             <div className="container">
               <div data-reveal="" className={styles.head}>
@@ -90,10 +94,6 @@ export default function ContactPage() {
               <LocationCards />
             </div>
           </section>
-
-          <div className={styles.bookingBand}>
-            <Booking />
-          </div>
 
           <section id="insurance" aria-labelledby="insurance-h" className={styles.insuranceBand}>
             <div className={`container ${styles.insuranceSection}`}>

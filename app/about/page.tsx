@@ -41,8 +41,8 @@ const tabs: NavLink[] = [
   { label: "Our Story", href: "#about" },
   { label: "Why Choose Us", href: "#why" },
   { label: "Our Doctors", href: "#doctors" },
-  { label: "Careers", href: "#careers" },
   { label: "Insurance", href: "#insurance" },
+  { label: "Careers", href: "#careers" },
 ];
 
 export default function AboutPage() {
@@ -132,8 +132,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <Careers />
-
         <section id="insurance" aria-labelledby="ins-h" className={`${styles.band} ${styles.alt}`}>
           <div className={`container ${styles.section}`}>
             <div className={styles.insuranceLayout}>
@@ -159,6 +157,8 @@ export default function AboutPage() {
             <InsurancePlans />
           </div>
         </section>
+
+        <Careers />
       </main>
       <SiteFooter />
       <MobileBookingBar />

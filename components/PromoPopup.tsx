@@ -53,9 +53,9 @@ export default function PromoPopup() {
       <a href="/contact#book" className={styles.banner} onClick={close}>
         <Image
           src="/images/promo-expert-opticians.png"
-          alt="Promotional discounts and offers: 25% off eye exams and 15% off a complete pair of glasses. Talk with our expert opticians and book your appointment. Cannot be combined with insurance or other offers. Offer only available on same day purchases. Other exclusions apply."
-          width={1448}
-          height={1086}
+          alt="Promotional discounts and offers: 25% off eye exams and 20% off a complete pair of glasses. Talk with our expert opticians and book your appointment. Cannot be combined with insurance or other offers. Offer only available on same day purchases. Other exclusions apply."
+          width={1152}
+          height={864}
           sizes="(max-width: 720px) 92vw, 640px"
           className={styles.image}
         />

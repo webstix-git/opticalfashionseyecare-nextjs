@@ -10,8 +10,11 @@ export default function Booking() {
           Schedule an Appointment
         </h2>
         <p className={styles.lead}>
-          Our schedule changes quickly, so the best way to book is online in the patient portal or by phone. Pick a time that works for you, or call and we&apos;ll
-          find one together.
+          Ready to come in?
+          <br />
+          Current patients can book through their patient portal or give us a call.
+          <br />
+          New patients, please call the office and we&apos;ll get you scheduled.
         </p>
         <p className={styles.urgent}>
           For an urgent eye concern, please call the clinic directly at{" "}
@@ -25,7 +28,13 @@ export default function Booking() {
       <div data-reveal="" className={styles.card}>
         <div className={styles.schedule}>
           <h3>Book Your Visit</h3>
-          <p>Schedule online through your clinic&apos;s patient portal, or call our office. Both clinics share one phone number.</p>
+          <p>
+            Current patients can schedule through their portal or call the office.
+            <br />
+            New patients, please call the office to schedule an appointment.
+            <br />
+            Both clinics share one phone number.
+          </p>
           <div className={styles.actions}>
             <div className={styles.portalActions}>
               {patientLinks.portals.map((p) => (

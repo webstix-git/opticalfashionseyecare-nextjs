@@ -20,8 +20,8 @@ const groups: { label: string; href?: string; links: NavLink[] }[] = [
     links: [
       { label: "Why Choose Us", href: "/about#why" },
       { label: "Our Optometrists", href: "/about#doctors" },
-      { label: "Careers", href: "/about#careers" },
       { label: "Insurance We Accept", href: "/about#insurance" },
+      { label: "Careers", href: "/about#careers" },
     ],
   },
   {
@@ -57,8 +57,8 @@ const groups: { label: string; href?: string; links: NavLink[] }[] = [
     label: "Contact Us",
     href: "/contact",
     links: [
-      { label: "Locations & Hours", href: "/contact#locations" },
       { label: "Schedule an Appointment", href: "/contact#book" },
+      { label: "Locations & Hours", href: "/contact#locations" },
       { label: "Patient Forms", href: "/contact#forms" },
     ],
   },
