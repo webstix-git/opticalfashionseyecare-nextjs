@@ -54,10 +54,12 @@ function renderAnswer({ a, links }: Faq): ReactNode {
   if (rest) segments.push({ text: rest });
   if (!segments.length) segments.push({ text: a });
 
-  return segments.flatMap((segment, i) => {
-    if (segment.href) return [linkNode(`link-${i}`, segment.href, segment.text)];
-    return linkPhones(segment.text, `phone-${i}`);
+  const nodes: ReactNode[] = [];
+  segments.forEach((segment, i) => {
+    if (segment.href) nodes.push(linkNode(`link-${i}`, segment.href, segment.text));
+    else nodes.push(...linkPhones(segment.text, `phone-${i}`));
   });
+  return nodes;
 }
 
 type Props = {
