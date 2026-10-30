@@ -2,6 +2,14 @@ import PhoneIcon from "@/components/PhoneIcon";
 import { contact, patientLinks } from "@/lib/content";
 import styles from "./Booking.module.css";
 
+function ArrowIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
 export default function Booking() {
   return (
     <section id="book" aria-labelledby="cta-h" className={`container ${styles.section}`}>
@@ -28,33 +36,50 @@ export default function Booking() {
       <div data-reveal="" className={styles.card}>
         <div className={styles.schedule}>
           <h3>Book Your Visit</h3>
-          <p>
-            Current patients can schedule through their portal or call the office.
-            <br />
-            New patients, please call the office to schedule an appointment.
-            <br />
-            Both clinics share one phone number.
-          </p>
-          <div className={styles.actions}>
-            <div className={styles.portalActions}>
-              {patientLinks.portals.map((p) => (
-                <a
-                  key={p.href}
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`btn btn-primary ${styles.portalButton}`}
-                  aria-label={`Schedule an Appointment in ${p.location} (opens in a new tab)`}
-                >
-                  Schedule an Appointment
-                  <span className={styles.portalLocation}>{p.location}</span>
-                </a>
-              ))}
+          <p className={styles.prompt}>Choose the option that best describes you.</p>
+          <div className={styles.panel}>
+            <div className={styles.column}>
+              <h4 className={styles.columnTitle}>Current Patients</h4>
+              <p className={styles.columnText}>
+                Already a patient? Schedule your next appointment through our patient portal or call our office.
+              </p>
+              <div className={styles.portalActions}>
+                {patientLinks.portals.map((p) => (
+                  <a
+                    key={p.href}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`btn btn-primary ${styles.portalButton}`}
+                    aria-label={`Schedule Online in ${p.location} (opens in a new tab)`}
+                  >
+                    <span className={styles.portalText}>
+                      Schedule Online
+                      <span className={styles.portalLocation}>{p.location}</span>
+                    </span>
+                    <span className={styles.portalArrow}>
+                      <ArrowIcon />
+                    </span>
+                  </a>
+                ))}
+              </div>
+              <p className={styles.or} aria-hidden="true">
+                OR
+              </p>
+              <a href={contact.phoneHref} className={`btn btn-outline ${styles.callOutline}`}>
+                Call {contact.phone}
+              </a>
             </div>
-            <a href={contact.phoneHref} className="btn btn-outline">
-              <PhoneIcon />
-              Call {contact.phone}
-            </a>
+            <div className={styles.column}>
+              <h4 className={styles.columnTitle}>New Patients</h4>
+              <p className={styles.columnText}>
+                New to Optical Fashions? Please call our office to schedule your first appointment.
+              </p>
+              <a href={contact.phoneHref} className={styles.callGreen} aria-label={`Call to schedule at ${contact.phone}`}>
+                Call to Schedule
+                <span className={styles.callPhone}>{contact.phone}</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
