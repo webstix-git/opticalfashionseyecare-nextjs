@@ -200,6 +200,23 @@ html[data-a11y-motion] [data-reveal] {
   text-wrap: balance;
 }
 
+@media (max-width: 499px) {
+  h1 {
+    font-size: 36px !important;
+    line-height: 46px !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+    line-height: 36px !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+    line-height: 30px !important;
+  }
+}
+
 .text-link {
   font-weight: 700;
   font-size: 1rem;

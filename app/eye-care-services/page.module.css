@@ -404,6 +404,17 @@
 }
 
 @media (max-width: 639px) {
+  .actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .sameDayPhoto {
     min-height: 210px;
   }
@@ -415,6 +426,42 @@
   .sameDayBenefits {
     grid-template-columns: 1fr;
     padding-top: 0;
+  }
+
+  .callBtn {
+    flex-wrap: nowrap;
+    gap: 10px;
+    min-height: 64px;
+    padding: 10px 16px 10px 10px;
+  }
+
+  .callIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .callText {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    min-width: max-content;
+    white-space: nowrap;
+    padding-left: 10px;
+  }
+
+  .callLabel {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .callNumber {
+    display: block;
+    flex-shrink: 0;
+    width: max-content;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
   }
 
   .benefit {
@@ -429,6 +476,26 @@
   .callBtn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .age {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 0.875rem;
+  }
+
+  .age:first-child {
+    padding-left: 0;
+  }
+
+  .age:last-child {
+    padding-right: 0;
+  }
+
+  .ageLabel {
+    font-size: 1rem;
   }
 }
 

@@ -108,6 +108,18 @@
   aspect-ratio: 1 / 1;
 }
 
+@media (max-width: 499px) {
+  .tall {
+    grid-row: span 2;
+    min-height: clamp(200px, 42vw, 600px);
+  }
+
+  .square {
+    min-height: clamp(200px, 42vw, 600px);
+    aspect-ratio: auto;
+  }
+}
+
 @media (max-width: 899px) {
   .copy {
     grid-column: 1 / -1;
