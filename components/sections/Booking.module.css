@@ -182,10 +182,10 @@
   width: 100%;
   margin-top: 4px;
   padding: 16px 32px;
-  border: 1px solid transparent;
+  border: 1px solid var(--navy);
   border-radius: 8px;
-  background: var(--green);
-  color: #ffffff;
+  background: transparent;
+  color: var(--navy);
   font: inherit;
   font-size: 1rem;
   font-weight: 700;
@@ -197,7 +197,7 @@
 }
 
 .callGreen:hover {
-  background: var(--green-dark);
+  background: var(--navy);
   color: #ffffff;
 }
 
