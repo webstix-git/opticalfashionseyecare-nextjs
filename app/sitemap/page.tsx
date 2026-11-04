@@ -45,7 +45,7 @@ const groups: { label: string; href?: string; links: NavLink[] }[] = [
       { label: "Lenses", href: "/eyeglasses-contacts#lenses" },
       { label: "Contact Lens Exams & Fittings", href: "/eyeglasses-contacts#contacts" },
       { label: "Myopia Control", href: "/eyeglasses-contacts#myopia" },
-      { label: "No Vision Insurance?", href: "/eyeglasses-contacts#value" },
+      { label: "Savings & Promotions", href: "/eyeglasses-contacts#value" },
     ],
   },
   {

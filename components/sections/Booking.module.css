@@ -35,6 +35,13 @@
   text-wrap: pretty;
 }
 
+.note {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
 .urgent {
   font-size: 0.9375rem;
   line-height: 1.6;

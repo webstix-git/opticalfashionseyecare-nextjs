@@ -24,7 +24,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Eyeglasses & Contact Lenses | Optical Fashions Eye Care Clinic",
   description:
-    "Designer frames from Gucci, YSL, Coach, Carolina Herrera, Nike and more, quality lenses, contact lens fittings, Stellest lenses for kids with myopia, and value packages in La Crosse and Holmen, WI.",
+    "Designer frames from Gucci, YSL, Coach, Carolina Herrera, Nike and more, quality lenses, contact lens fittings, Stellest lenses for kids with myopia, and savings and promotions in La Crosse and Holmen, WI.",
 };
 
 const structuredData = {
@@ -41,7 +41,7 @@ const tabs: NavLink[] = [
   { label: "Lenses", href: "#lenses" },
   { label: "Contact Lenses", href: "#contacts" },
   { label: "Myopia Control", href: "#myopia" },
-  { label: "Value Packages", href: "#value" },
+  { label: "Savings & Promotions", href: "#value" },
 ];
 
 const eyewearFaqs = [
@@ -60,7 +60,7 @@ const valueCards = [
   },
   {
     title: "Year-Supply Contact Deals",
-    body: "Order a year's supply of contact lenses and ask us about special deals.",
+    body: "Order a year's supply of contact lenses and receive a 5% discount on amounts paid after insurance. Ask about our exclusive rebates.",
   },
   {
     title: "Using Vision Insurance?",
@@ -234,6 +234,10 @@ export default function EyeglassesContactsPage() {
                 One option we offer is Stellest lenses, eyeglass lenses designed for children with myopia. Your doctor will explain whether they&apos;re a good fit
                 for your child and what to expect.
               </p>
+              <p className={styles.myopiaText}>
+                We also offer contact lenses approved by the FDA to help manage myopia and low-dose atropine eye drops. We fit many children in contact lenses as
+                well to help manage myopia.
+              </p>
               <a href="/contact#book" className="btn btn-dark">
                 Book a Myopia Consultation
               </a>
@@ -247,13 +251,14 @@ export default function EyeglassesContactsPage() {
         <section id="value" aria-labelledby="value-h" className={`${styles.band} ${styles.alt}`}>
           <div className={`container ${styles.section}`}>
             <div data-reveal="" className={styles.head}>
-              <p className="eyebrow">Value packages &amp; promotions</p>
+              <p className="eyebrow">Savings &amp; promotions</p>
               <h2 id="value-h" className="section-title">
-                No Vision Insurance? We&apos;ve Got Options.
+                Ways to Save on Eye Exams &amp; Eyewear
               </h2>
               <p className={styles.intro}>
                 Good eyewear shouldn&apos;t depend on having the right insurance. If you&apos;re paying out of pocket, ask us about value packages and current
-                promotions on glasses, and special deals on a year&apos;s supply of contact lenses.
+                promotions on glasses, and special deals on a year&apos;s supply of contact lenses. Using vision insurance? We&apos;ll help you understand your
+                coverage too.
               </p>
             </div>
             <ul data-reveal="" className={styles.valueGrid}>

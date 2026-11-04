@@ -24,6 +24,10 @@ export default function Booking() {
           <br />
           New patients, please call the office and we&apos;ll get you scheduled.
         </p>
+        <p className={styles.note}>
+          Routine eye exams can be scheduled through our online portal. All other exam types, including those requiring specialized testing such as OCT or Visual
+          Field (VF), must be scheduled by phone.
+        </p>
         <p className={styles.urgent}>
           For an urgent eye concern, please call the clinic directly at{" "}
           <a href={contact.phoneHref} className="tel-link">

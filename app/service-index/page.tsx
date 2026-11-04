@@ -232,7 +232,7 @@ export default function ServiceIndexPage() {
           </div>
           <div>
             <dt>No vision insurance</dt>
-            <dd>Save 25% on your eye exam and 20% on glasses when you pay on the day of your visit. Value packages and promotions are available on glasses, and special deals are available on a year&apos;s supply of contact lenses.</dd>
+            <dd>Save 25% on your eye exam and 20% on glasses when you pay on the day of your visit. Savings and promotions are available on glasses, and special deals are available on a year&apos;s supply of contact lenses.</dd>
           </div>
           <div>
             <dt>Payment</dt>

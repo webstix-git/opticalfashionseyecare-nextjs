@@ -50,7 +50,7 @@ export const headerNav: HeaderNavLink[] = [
       { label: "Lenses", href: "/eyeglasses-contacts#lenses" },
       { label: "Contact Lenses", href: "/eyeglasses-contacts#contacts" },
       { label: "Myopia Control", href: "/eyeglasses-contacts#myopia" },
-      { label: "Value Packages", href: "/eyeglasses-contacts#value" },
+      { label: "Savings & Promotions", href: "/eyeglasses-contacts#value" },
     ],
   },
   {
@@ -205,6 +205,7 @@ export const contactLensTypes = [
   "Daily, weekly, two-week and monthly lenses",
   "Lenses for astigmatism",
   "Multifocal contacts",
+  "Specialty lenses like Sclerals and RGP lenses",
   "Help for first-time wearers",
 ];
 
@@ -584,7 +585,7 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
       },
       {
         q: "How do I order or reorder contact lenses?",
-        a: "Order or reorder contact lenses online anytime and have them shipped to you.",
+        a: "Order or reorder contact lenses online anytime and have them shipped to you. Patients may also call our office directly to place an order over the phone.",
         links: [
           { text: "contact lenses", href: "/eyeglasses-contacts#contacts" },
           { text: "online", href: patientLinks.contactLenses },
@@ -592,12 +593,12 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
       },
       {
         q: "Do you have options for patients without vision insurance?",
-        a: "Yes. If you don't have vision insurance, you'll save 25% on your eye exam and 20% on glasses when you pay on the day of your visit. We also offer value packages and promotions on glasses, and special deals on a year's supply of contact lenses.",
+        a: "Yes. If you don't have vision insurance, you'll save 25% on your eye exam and 20% on glasses when you pay on the day of your visit. We also offer savings and promotions on glasses, and special deals on a year's supply of contact lenses.",
         links: [
           { text: "vision insurance", href: "/about#insurance" },
           { text: "eye exam", href: "/eye-care-services#exams" },
           { text: "glasses", href: "/eyeglasses-contacts#brands" },
-          { text: "value packages", href: "/eyeglasses-contacts#value" },
+          { text: "savings and promotions", href: "/eyeglasses-contacts#value" },
           { text: "contact lenses", href: "/eyeglasses-contacts#contacts" },
         ],
       },
@@ -645,6 +646,7 @@ export const locations: {
     dir: mapLinks.laCrosse,
     photo: "/images/la-crosse-office.png",
     photoAlt: "Front of the Optical Fashions La Crosse office, a two-story building with a red roof and glass entrance",
+    note: ["We are on the frontage road on highway 16.", "Located by the State Farm and Yahnke dental office."],
     hours: [
       { days: "Mon–Thu", time: "7:30 AM – 5:30 PM" },
       { days: "Friday", time: "7:30 AM – 2:00 PM" },
