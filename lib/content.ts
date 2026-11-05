@@ -232,16 +232,18 @@ export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
     name: "Dr. Holly Fisher",
     src: "/images/doctors/holly.webp",
     bio: [
-      "Dr. Fisher is a graduate of Sparta High School. She completed her Bachelor of Science degree at the University of Wisconsin-Eau Claire and obtained her Doctorate of Optometry degree from the University of Missouri, in St. Louis in 1998. She won the Young Optometrist of the Year award in 2006 for the state of Wisconsin. Dr. Fisher became a Diplomate of the American Board of Optometry in 2013. She has enjoyed being a member of La Crosse Valley View Rotary since 2004.",
-      "Dr. Fisher and her husband Clay have enjoyed watching their son and daughter become young adults as they pursue their futures in college and beyond. Their free time is spent enjoying nature boating, hiking, biking, and traveling.",
+      "With roots in Sparta and a career dedicated to helping others see clearly and stay healthy, Dr. Fisher brings experience and a strong sense of community to her work. After graduating from Sparta High School, she earned her Bachelor of Science degree from the University of Wisconsin–Eau Claire and her Doctor of Optometry degree from the University of Missouri–St. Louis. Dr. Fisher started her career at Mayo in Eau Claire and then joined Optical Fashions in 2002.",
+      "Dr. Fisher was honored as Wisconsin’s Young Optometrist of the Year in 2006 and became a Diplomate of the American Board of Optometry in 2013. Her commitment to community extends beyond the exam room. She enjoys volunteering and has been an active member of La Crosse Valley View Rotary since 2004.",
+      "Dr. Fisher and her husband, Clay, call Holmen home and enjoy cheering on their adult son and daughter as they build their futures and discover their own adventures. Their favorite days include time outdoors—whether boating, hiking, biking, or exploring somewhere new together.",
     ],
   },
   {
     name: "Dr. Brenda Wedig",
     src: "/images/doctors/brenda.webp",
     bio: [
-      "Dr. Wedig received her Bachelor of Science degree from the University of Wisconsin-La Crosse in 2004. During this time, she was introduced to the world of optometry by working at Optical Fashions. She then obtained her Doctorate of Optometry degree from the Pennsylvania College of Optometry in Philadelphia, Pennsylvania in 2008. Dr. Wedig became a Diplomate of the American Board of Optometry in 2014. She also participates in the West Salem Lions Club.",
-      "Dr. Wedig enjoys spending time with her husband, Matt and their four elementary school aged children. When she isn’t busy with her kids’ activities she likes to read, camp, travel and spend times with family and friends.",
+      "Dr. Wedig grew up in a small town in southwestern WI. She received her Bachelor of Science degree from the University of Wisconsin-La Crosse in 2004. During this time, she was introduced to the world of optometry by working at Optical Fashions. She then obtained her Doctorate of Optometry degree from the Pennsylvania College of Optometry in Philadelphia, Pennsylvania in 2008. Dr. Wedig became a Diplomate of the American Board of Optometry in 2014. She enjoys working with patients of all ages. Her care philosophy is to treat every patient as if they were family. She wants patients to feel heard during their exam and tries to explain all findings in a way that patients understand.",
+      "Outside of work she gives back to the local community through her membership in the West Salem Lions Club for 5 years and currently is the treasurer.",
+      "Dr. Wedig enjoys spending time with her husband, Matt and their four school aged children. When she isn’t busy with her kids’ activities she likes to read, camp, travel and spend time with family and friends.",
     ],
   },
   {
@@ -257,8 +259,8 @@ export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
     name: "Dr. Robin Theye",
     src: "/images/doctors/robin.webp",
     bio: [
-      "Dr. Theye grew up in southeastern Minnesota and has spent most of her life in the driftless region. Dr. Theye graduated from the University of Wisconsin-La Crosse in 2004. She received her Doctorate of Optometry from the Illinois College of Optometry in 2008. After graduation, she practiced in Onalaska for several years and has been practicing in Winona since 2015. Dr. Theye has been society president for both the Wisconsin Optometric Association and Minnesota Optometric Association. Dr. Theye brings years of experience and has a passion for dry eye and patient education. Dr. Theye enjoys working with patients of all ages and is proud to provide the highest level of eye care in our area.",
-      "Dr. Theye is married and has a son that she enjoys spending her free time with. She has lived in Galesville for the last ten years. With her husband Mike, they lead the Galesville Cub Scouts. She considers herself a foodie and always wants to try new places. Traveling to the Caribbean and Door County are her favorite destinations.",
+      "Dr. Theye grew up in southeastern Minnesota and has spent most of her life in the driftless region. Dr. Theye graduated from the University of Wisconsin-La Crosse in 2004. She received her Doctorate of Optometry from the Illinois College of Optometry in 2008. After graduation, she practiced in Onalaska until 2015 and in Winona from 2015 until 2024. Dr. Theye has been society president for both the Wisconsin Optometric Association and Minnesota Optometric Association. Dr. Theye brings years of experience and has a passion for dry eye and patient education. Dr. Theye enjoys working with patients of all ages and is proud to provide the highest level of eye care in our area.",
+      "Dr. Theye is married and has a teenage son that she enjoys spending her free time with. She has lived in Galesville since 2015 and is a member of the Galesville Lions Club. She considers herself a foodie and always wants to try new places. Traveling to the Caribbean and Door County are her favorite destinations.",
     ],
   },
   {
@@ -450,7 +452,7 @@ export const faqGroups: { id: string; title: string; items: Faq[] }[] = [
     items: [
       {
         q: "How do I schedule an appointment?",
-        a: "Current patients can schedule through their patient portal or call the office. New patients, please call the office to schedule an appointment. You can reach us at (608) 782-7127.",
+        a: "Current patients can schedule routine eye exams through the patient portal. All other exam types, including those that need specialized testing such as **OCT** or **Visual Field (VF)**, should be scheduled by phone. New patients, please call the office. You can reach us at (608) 782-7127.",
         links: [
           { text: "patient portal", href: patientLinks.portal },
           { text: "schedule an appointment", href: "/contact#book" },

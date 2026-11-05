@@ -1,4 +1,3 @@
-import PhoneIcon from "@/components/PhoneIcon";
 import { contact, patientLinks } from "@/lib/content";
 import styles from "./Booking.module.css";
 
@@ -10,81 +9,92 @@ function ArrowIcon() {
   );
 }
 
+const callForTags = ["Medical eye visits", "Follow-ups", "OCT imaging", "Visual field (VF) testing"];
+
 export default function Booking() {
   return (
     <section id="book" aria-labelledby="cta-h" className={`container ${styles.section}`}>
       <div data-reveal="" className={styles.copy}>
+        <p className="eyebrow">Appointments</p>
         <h2 id="cta-h" className={styles.title}>
           Schedule an Appointment
         </h2>
         <p className={styles.lead}>
-          Ready to come in?
-          <br />
-          Current patients can book through their patient portal or give us a call.
-          <br />
-          New patients, please call the office and we&apos;ll get you scheduled.
+          We&apos;re here to make scheduling your eye care simple and convenient. Whether you&apos;re a new patient or returning for a visit, we&apos;re here to help you schedule your appointment at a time that works for you.
         </p>
-        <p className={styles.note}>
-          Routine eye exams can be scheduled through our online portal. All other exam types, including those requiring specialized testing such as OCT or Visual
-          Field (VF), must be scheduled by phone.
-        </p>
+
+        <div className={styles.infoBox}>
+          <h3 className={styles.infoTitle}>What can I book online?</h3>
+          <p className={styles.infoText}>
+            Online scheduling is for <strong>routine eye exams</strong> only. Please call us for:
+          </p>
+          <ul className={styles.tags}>
+            {callForTags.map((tag) => (
+              <li key={tag} className={styles.tag}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <p className={styles.urgent}>
-          For an urgent eye concern, please call the clinic directly at{" "}
-          <a href={contact.phoneHref} className="tel-link">
-            <PhoneIcon size={16} />
-            {contact.phone}
-          </a>
-          .
+          <span className={styles.urgentDot} aria-hidden="true" />
+          <span>
+            Urgent eye concern? Call the clinic directly at{" "}
+            <a href={contact.phoneHref}>{contact.phone}</a>.
+          </span>
         </p>
       </div>
+
       <div data-reveal="" className={styles.card}>
-        <div className={styles.schedule}>
-          <h3>Book Your Visit</h3>
+        <div className={styles.cardHeader}>
+          <h3 className={styles.cardTitle}>Book your visit</h3>
           <p className={styles.prompt}>Choose the option that best describes you.</p>
-          <div className={styles.panel}>
-            <div className={styles.column}>
-              <h4 className={styles.columnTitle}>Current Patients</h4>
-              <p className={styles.columnText}>
-                Already a patient? Schedule your next appointment through our patient portal or call our office.
-              </p>
-              <div className={styles.portalActions}>
-                {patientLinks.portals.map((p) => (
-                  <a
-                    key={p.href}
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`btn btn-primary ${styles.portalButton}`}
-                    aria-label={`Schedule Online in ${p.location} (opens in a new tab)`}
-                  >
-                    <span className={styles.portalText}>
-                      Schedule Online
-                      <span className={styles.portalLocation}>{p.location}</span>
-                    </span>
-                    <span className={styles.portalArrow}>
-                      <ArrowIcon />
-                    </span>
-                  </a>
-                ))}
-              </div>
-              <p className={styles.or} aria-hidden="true">
-                OR
-              </p>
-              <a href={contact.phoneHref} className={`btn btn-outline ${styles.callOutline}`}>
-                Call {contact.phone}
-              </a>
-            </div>
-            <div className={styles.column}>
-              <h4 className={styles.columnTitle}>New Patients</h4>
-              <p className={styles.columnText}>
-                New to Optical Fashions? Please call our office to schedule your first appointment.
-              </p>
-              <a href={contact.phoneHref} className={styles.callGreen} aria-label={`Call to schedule at ${contact.phone}`}>
-                Call to Schedule
-                <span className={styles.callPhone}>{contact.phone}</span>
-              </a>
-            </div>
+        </div>
+
+        <div className={styles.block}>
+          <div className={styles.blockHead}>
+            <h4 className={styles.blockTitle}>Current Patients</h4>
+            <span className={`${styles.badge} ${styles.badgeOnline}`}>Book online</span>
           </div>
+          <p className={styles.blockText}>Book a routine eye exam through the patient portal. Select your location:</p>
+          <div className={styles.portalActions}>
+            {patientLinks.portals.map((p) => (
+              <a
+                key={p.href}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.portalButton}
+                aria-label={`Schedule online in ${p.location} (opens in a new tab)`}
+              >
+                <span className={styles.portalText}>
+                  <span className={styles.portalLabel}>Schedule online</span>
+                  <span className={styles.portalLocation}>{p.location}</span>
+                </span>
+                <span className={styles.portalArrow}>
+                  <ArrowIcon />
+                </span>
+              </a>
+            ))}
+          </div>
+          <p className={styles.otherVisit}>
+            Need a different type of visit? Call{" "}
+            <a href={contact.phoneHref}>{contact.phone}</a>
+          </p>
+        </div>
+
+        <div className={styles.block}>
+          <div className={styles.blockHead}>
+            <h4 className={styles.blockTitle}>New Patients</h4>
+            <span className={`${styles.badge} ${styles.badgeWelcome}`}>Welcome!</span>
+          </div>
+          <p className={styles.blockText}>
+            New to Optical Fashions? Give us a call and our team will help schedule your first appointment.
+          </p>
+          <a href={contact.phoneHref} className={styles.callButton} aria-label={`Call ${contact.phone}`}>
+            Call {contact.phone}
+          </a>
         </div>
       </div>
     </section>

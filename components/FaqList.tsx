@@ -27,7 +27,7 @@ function linkPhones(text: string, keyPrefix: string): ReactNode[] {
   let match: RegExpExecArray | null;
   const pattern = new RegExp(phonePattern.source, "g");
   while ((match = pattern.exec(text)) !== null) {
-    if (match.index > last) parts.push(text.slice(last, match.index));
+    if (match.index > last) parts.push(...formatInline(text.slice(last, match.index), `${keyPrefix}-pre-${match.index}`));
     const number = match[0];
     const href = number === contact.phone ? contact.phoneHref : `tel:${number.replace(/\D/g, "")}`;
     parts.push(
@@ -36,6 +36,20 @@ function linkPhones(text: string, keyPrefix: string): ReactNode[] {
       </a>,
     );
     last = match.index + number.length;
+  }
+  if (last < text.length) parts.push(...formatInline(text.slice(last), `${keyPrefix}-rest`));
+  return parts.length ? parts : formatInline(text, keyPrefix);
+}
+
+function formatInline(text: string, keyPrefix: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const pattern = /\*\*(.+?)\*\*/g;
+  let last = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index));
+    parts.push(<strong key={`${keyPrefix}-b-${match.index}`}>{match[1]}</strong>);
+    last = match.index + match[0].length;
   }
   if (last < text.length) parts.push(text.slice(last));
   return parts.length ? parts : [text];
