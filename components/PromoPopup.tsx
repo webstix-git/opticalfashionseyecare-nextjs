@@ -57,6 +57,7 @@ export default function PromoPopup() {
           width={1152}
           height={864}
           sizes="(max-width: 720px) 92vw, 640px"
+          loading="eager"
           className={styles.image}
         />
       </a>

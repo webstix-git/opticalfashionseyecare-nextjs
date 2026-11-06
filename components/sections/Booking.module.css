@@ -228,8 +228,14 @@
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.portalButton:hover {
+.portalButton:hover,
+.portalButton:focus-visible {
   background: color-mix(in srgb, var(--navy) 88%, #000000);
+  color: #ffffff;
+}
+
+.portalButton:hover .portalArrow {
+  transform: translateX(3px);
 }
 
 .portalText {
@@ -256,6 +262,7 @@
   place-items: center;
   flex-shrink: 0;
   opacity: 0.9;
+  transition: transform 0.2s ease;
 }
 
 .otherVisit {
