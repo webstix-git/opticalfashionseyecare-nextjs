@@ -33,6 +33,7 @@ export const headerNav: HeaderNavLink[] = [
       { label: "Our Story", href: "/about#about" },
       { label: "Why Choose Us", href: "/about#why" },
       { label: "Our Doctors", href: "/about#doctors" },
+      { label: "Our Team", href: "/about#team" },
       { label: "Insurance", href: "/about#insurance" },
       { label: "Careers", href: "/about#careers" },
     ],
@@ -274,6 +275,18 @@ export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
     ],
   },
 ].map((d) => ({ ...d, photo: `Portrait of ${d.name}` }));
+
+export const leadership: (ImageContent & { name: string; role: string; bio: string[] })[] = [
+  {
+    name: "Kathryn Block",
+    role: "Business Manager",
+    src: "/images/doctors/kathryn.webp",
+    photo: "Portrait of Kathryn Block",
+    bio: [
+      "Kathryn works closely with the internal team at Optical Fashions and handles business inquiries, charitable donations, and other administrative responsibilities.",
+    ],
+  },
+];
 
 export const careerRoles = [
   {

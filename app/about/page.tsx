@@ -9,7 +9,7 @@ import InsurancePlans from "@/components/InsurancePlans";
 import About from "@/components/sections/About";
 import Careers from "@/components/sections/Careers";
 import CareTabs from "@/components/CareTabs";
-import { aboutPagePhoto, contact, doctors, why, type NavLink } from "@/lib/content";
+import { aboutPagePhoto, contact, doctors, leadership, why, type NavLink } from "@/lib/content";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -34,6 +34,12 @@ const structuredData = {
       jobTitle: "Optometrist",
       worksFor: { "@type": "Optometric", name: contact.businessName },
     })),
+    ...leadership.map((p) => ({
+      "@type": "Person",
+      name: p.name,
+      jobTitle: p.role,
+      worksFor: { "@type": "Optometric", name: contact.businessName },
+    })),
   ],
 };
 
@@ -41,6 +47,7 @@ const tabs: NavLink[] = [
   { label: "Our Story", href: "#about" },
   { label: "Why Choose Us", href: "#why" },
   { label: "Our Doctors", href: "#doctors" },
+  { label: "Our Team", href: "#team" },
   { label: "Insurance", href: "#insurance" },
   { label: "Careers", href: "#careers" },
 ];
@@ -129,6 +136,46 @@ export default function AboutPage() {
                 Book a Visit With Our Doctors
               </a>
             </div>
+          </div>
+        </section>
+
+        <section id="team" aria-labelledby="team-h" className={styles.band}>
+          <div className={`container ${styles.section}`}>
+            <div data-reveal="" className={styles.head}>
+              <p className="eyebrow">Our team</p>
+              <h2 id="team-h" className="section-title">
+                Leadership &amp; Administration
+              </h2>
+              <p className={styles.intro}>
+                Behind the exam rooms, our business team keeps Optical Fashions running smoothly for patients and staff.
+              </p>
+            </div>
+            <ul className={styles.doctorList}>
+              {leadership.map((person) => (
+                <li key={person.name} data-reveal="" className={styles.doctor}>
+                  <div className={styles.portrait}>
+                    <ImageSlot
+                      placeholder={person.photo}
+                      src={person.src}
+                      alt={`Portrait of ${person.name}`}
+                      position="center top"
+                      sizes="(max-width: 700px) 100vw, 280px"
+                    />
+                  </div>
+                  <div className={styles.doctorBody}>
+                    <div>
+                      <h3 className={styles.doctorName}>{person.name}</h3>
+                      <p className={styles.doctorRole}>{person.role}</p>
+                    </div>
+                    {person.bio.map((p) => (
+                      <p key={p.slice(0, 24)} className={styles.body}>
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
