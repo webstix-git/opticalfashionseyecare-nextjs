@@ -34,7 +34,7 @@ export default function FaqPage() {
       <main id="main">
         <PageHero
           crumb="FAQ"
-          image="/images/eye-care-services-hero.png"
+          image="/images/faq-hero.jpg"
           imageSize={{ width: 932, height: 436 }}
           softOverlay
           title="Frequently Asked Questions"

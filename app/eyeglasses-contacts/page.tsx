@@ -107,7 +107,7 @@ export default function EyeglassesContactsPage() {
               <ImageSlot
                 placeholder="Photo: patient trying on glasses at the mirror in the optical shop"
                 src="/images/eyewear/optical-shop-try-on.jpg"
-                alt="Man trying on tortoiseshell glasses while looking at his reflection in a mirror"
+                alt="Patient smiling in the mirror while trying on glasses in the Optical Fashions shop"
                 sizes="(max-width: 900px) 100vw, 50vw"
               />
             </div>
@@ -141,9 +141,9 @@ export default function EyeglassesContactsPage() {
             <div className={styles.split}>
               <div data-reveal="" className={`${styles.media} ${styles.landscape}`}>
                 <ImageSlot
-                  placeholder="Photo: eyeglass frames on lit glass shelves in the optical shop"
+                  placeholder="Photo: designer frames on display in the optical shop"
                   src="/images/eyewear/lenses-display.jpg"
-                  alt="Optician holding a display of tinted lens samples in front of a wall of frames"
+                  alt="OGI designer eyeglasses on display in the Optical Fashions optical shop"
                   sizes="(max-width: 900px) 100vw, 50vw"
                 />
               </div>
@@ -210,9 +210,9 @@ export default function EyeglassesContactsPage() {
             </div>
             <div data-reveal="" className={`${styles.media} ${styles.landscape}`}>
               <ImageSlot
-                placeholder="Photo: contact lens on a fingertip"
+                placeholder="Photo: patient trying on eyewear in the optical shop"
                 src="/images/service-contact-lenses.jpg"
-                alt="Close-up of a person placing a soft contact lens on their fingertip toward their eye"
+                alt="Patient smiling while trying on glasses in the Optical Fashions optical shop"
                 sizes="(max-width: 900px) 100vw, 50vw"
               />
             </div>
@@ -243,7 +243,7 @@ export default function EyeglassesContactsPage() {
               </a>
             </div>
             <div className={styles.myopiaMedia}>
-              <ImageSlot placeholder={myopiaPhoto.photo} src={myopiaPhoto.src} alt={myopiaPhoto.alt} position="15% center" sizes="(max-width: 900px) 100vw, 50vw" />
+              <ImageSlot placeholder={myopiaPhoto.photo} src={myopiaPhoto.src} alt={myopiaPhoto.alt} position="center" sizes="(max-width: 900px) 100vw, 50vw" />
             </div>
           </div>
         </section>

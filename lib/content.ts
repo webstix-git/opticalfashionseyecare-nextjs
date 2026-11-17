@@ -80,40 +80,40 @@ export const mapLinks = {
 export type ImageContent = { photo: string; src?: string };
 
 export const aboutPhoto: ImageContent & { alt: string } = {
-  photo: "Photo: optometrist examining a patient at the slit lamp",
+  photo: "Photo: Optical Fashions optometrist laughing with a patient during a consultation",
   src: "/images/home-about-eye-exam.jpg",
-  alt: "Smiling optometrist in a white coat talking with a patient seated at the slit lamp",
+  alt: "Optical Fashions optometrist smiling and talking with a patient at the consultation desk",
 };
 
 export const aboutPagePhoto: ImageContent & { alt: string } = {
-  photo: "Photo: optometrist examining a patient at the slit lamp",
+  photo: "Photo: optometrist reviewing exam results with a patient",
   src: "/images/about-page-eye-exam.jpg",
-  alt: "Optometrist looking through a slit lamp to examine a patient's eyes",
+  alt: "Smiling Optical Fashions optometrist reviewing eye exam results with a patient",
 };
 
 export const services: (ImageContent & { title: string; body: string; cta: string; href?: string; alt?: string; position?: string })[] = [
   {
-    photo: "Photo: comprehensive eye exam in progress, doctor at the slit lamp with patient",
+    photo: "Photo: comprehensive eye exam in progress at the slit lamp",
     src: "/images/home-comprehensive-eye-exam.jpg",
-    alt: "Smiling woman resting her chin on a slit lamp while the optometrist examines her eyes",
+    alt: "Optical Fashions optometrist examining a patient at the slit lamp",
     title: "Comprehensive Eye Exams",
     body: "A thorough look at your vision and eye health for adults and children, with your doctor explaining what they find.",
     cta: "What to expect at your exam",
     href: "/eye-care-services#exams",
   },
   {
-    photo: "Photo: doctor examining a patient with diagnostic equipment",
+    photo: "Photo: diagnostic imaging during a medical eye visit",
     src: "/images/service-medical-eye-care.jpg",
-    alt: "Optometrist adjusting a phoropter in front of an older patient during an eye test",
+    alt: "Optical Fashions team member reviewing diagnostic results with a patient",
     title: "Medical Eye Care",
     body: "Care for dry eye, glaucoma, cataracts, pink eye and sudden pain or vision changes, with same-day appointments when you need them.",
     cta: "Explore medical eye care",
     href: "/eye-care-services#medical",
   },
   {
-    photo: "Photo: close-up of a contact lens being placed on the eye",
+    photo: "Photo: patient trying on glasses in the optical shop",
     src: "/images/service-contact-lenses.jpg",
-    alt: "Close-up of a person placing a soft contact lens on their fingertip toward their eye",
+    alt: "Patient smiling while trying on glasses in the Optical Fashions optical shop",
     title: "Contact Lenses & Eyewear",
     body: "Contact lens exams and fittings, plus designer frames from Gucci, YSL, Coach, Nike and more.",
     cta: "Browse contacts and frames",
@@ -163,15 +163,15 @@ export const medical: (ImageContent & { title: string; body: string; link: strin
 ];
 
 export const myopiaPhoto: ImageContent & { alt: string } = {
-  photo: "Photo: school-age child trying on glasses with a parent nearby, relaxed and smiling",
-  src: "/opticalfashion/7.jpeg",
-  alt: "Young girl adjusting her black glasses in front of a blurred eye chart",
+  photo: "Photo: optometrist examining a toddler during a pediatric eye exam",
+  src: "/images/home-children-families.jpg",
+  alt: "Optical Fashions optometrist examining a toddler on a parent's lap during a pediatric eye exam",
 };
 
 export const familiesPhoto: ImageContent & { alt: string } = {
-  photo: "Photo: child wearing glasses in front of an eye chart",
+  photo: "Photo: optometrist examining a toddler during a pediatric eye exam",
   src: "/images/home-children-families.jpg",
-  alt: "Young girl adjusting her black glasses in front of a blurred eye chart",
+  alt: "Optical Fashions optometrist examining a toddler on a parent's lap during a pediatric eye exam",
 };
 
 export const designerBrands = [
@@ -209,21 +209,22 @@ export const contactLensTypes = [
   "Help for first-time wearers",
 ];
 
-export const eyewearPhotos: (ImageContent & { alt?: string })[] = [
+export const eyewearPhotos: (ImageContent & { alt?: string; position?: string })[] = [
   {
-    photo: "Photo: patient trying on designer frames at the mirror with an optician",
+    photo: "Photo: patient trying on designer frames at the mirror",
     src: "/images/eyewear/home-frame-try-on.jpg",
-    alt: "Smiling woman trying on round metal glasses in front of a wall of frames",
+    alt: "Patient smiling in the mirror while trying on glasses at Optical Fashions",
+    position: "72% 38%",
   },
   {
     photo: "Photo: frames on display",
     src: "/images/eyewear/home-frames-rack.jpg",
-    alt: "Hand picking a pair of black eyeglass frames from a display rack",
+    alt: "Rows of designer eyeglass frames on display in the Optical Fashions shop",
   },
   {
-    photo: "Photo: frame detail, hinge or temple",
+    photo: "Photo: optician helping a patient choose frames",
     src: "/images/eyewear/home-frame-handoff.jpg",
-    alt: "Optician handing a pair of tortoiseshell glasses to a patient across a table",
+    alt: "Optical Fashions optician helping a patient choose frames at the fitting desk",
   },
 ];
 
@@ -265,7 +266,7 @@ export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
   },
   {
     name: "Dr. Jack Latham",
-    src: "/images/doctors/jack.png",
+    src: "/images/doctors/jack.webp",
     bio: [
       "Dr. Jack Latham, OD, joined Optical Fashions after graduating from the Illinois College of Optometry in May 2026. Growing up on a large dairy farm in Boscobel, WI, Dr. Latham developed an interest in optometry after an eye exam with his optometrist in high school. He went on to attend UW-Eau Claire, graduating in 2022, before earning his Doctor of Optometry degree from the Illinois College of Optometry.",
       "Dr. Latham has a strong interest in ocular disease, specialty contact lenses, myopia control, and primary eye care. He is passionate about providing individual-based eye care to patients of all ages and is excited to begin his career in the La Crosse community. Dr. Latham is a member of both the Wisconsin Optometric Association and the American Optometric Association.",
@@ -646,8 +647,9 @@ export const locations: {
     street: "2104 WI-16",
     city: "La Crosse, WI 54601",
     dir: mapLinks.laCrosse,
-    photo: "/images/la-crosse-office.png",
+    photo: "/images/la-crosse-office.jpg",
     photoAlt: "Front of the Optical Fashions La Crosse office, a two-story building with a red roof and glass entrance",
+    photoPosition: "center 45%",
     note: ["We are on the frontage road on highway 16.", "Located by the State Farm and Yahnke dental office."],
     hours: [
       { days: "Mon–Thu", time: "7:30 AM – 5:30 PM" },
@@ -661,8 +663,8 @@ export const locations: {
     city: "Holmen, WI 54636",
     dir: mapLinks.holmen,
     photo: "/images/holmen-office.jpg",
-    photoAlt: "Brick entrance of the Optical Fashions Eye Care Clinic in Holmen with its sign above the glass doors",
-    photoPosition: "center 32%",
+    photoAlt: "Exterior of the Optical Fashions Eye Care Clinic in Holmen with the clinic sign above the entrance",
+    photoPosition: "center 40%",
     note: ["Located adjacent to the fire department in Holmen.", "Look for the eyeglass bicycle rack."],
     hours: [
       { days: "Mon–Thu", time: "7:30 AM – 5:30 PM" },
@@ -726,9 +728,9 @@ export const careServices: NavLink[] = [
 export const footerServices = careServices;
 
 export const examPhoto: ImageContent & { alt: string; position?: string } = {
-  photo: "Photo: doctor at the slit lamp with a patient during a comprehensive exam",
+  photo: "Photo: optometrist adjusting the phoropter during a comprehensive exam",
   src: "/images/comprehensive-exam-eye-drops.jpg",
-  alt: "Doctor in blue gloves applying eye drops for an older woman during an eye exam",
+  alt: "Optical Fashions optometrist adjusting the phoropter during a comprehensive eye exam",
 };
 
 export const examAges: { label: string; text: string }[] = [
@@ -782,17 +784,17 @@ export const surgeryCare: (ImageContent & { title: string; body: string; include
     title: "LASIK Co-Management",
     body: "We help you decide whether LASIK is a good option, then provide your pre-op evaluation and post-op follow-up care here in La Crosse or Holmen.",
     includes: ["Candidacy evaluation", "Pre-op exam", "Post-op follow-up"],
-    photo: "Photo: adult patient in a LASIK consultation",
+    photo: "Photo: diagnostic imaging during a pre-op evaluation",
     src: "/images/lasik-procedure.jpg",
-    alt: "Close-up of a laser beam directed at a patient's eye during a LASIK procedure",
+    alt: "Optical Fashions team member reviewing diagnostic imaging with a patient before surgery",
   },
   {
     title: "Cataract Surgery Care",
     body: "When a cataract affects your daily life, we refer you to a surgeon and provide care before and after your procedure.",
     includes: ["Surgeon referral", "Pre-op care", "Post-op follow-up"],
-    photo: "Photo: older patient reviewing results with the doctor",
+    photo: "Photo: optometrist reviewing results with a patient",
     src: "/images/about-doctor-patient.jpg",
-    alt: "Smiling doctor shaking hands with an older patient during a consultation",
+    alt: "Optical Fashions optometrist reviewing eye exam results with a patient",
     position: "center 30%",
   },
   {
@@ -801,6 +803,6 @@ export const surgeryCare: (ImageContent & { title: string; body: string; include
     includes: ["Surgeon coordination", "Post-op follow-up"],
     photo: "Photo: doctor checking in with a patient at a follow-up visit",
     src: "/images/other-surgical-care.jpg",
-    alt: "Surgical team in scrubs operating an eye surgery laser system on a patient",
+    alt: "Optical Fashions optometrist talking with a patient during a follow-up visit",
   },
 ];

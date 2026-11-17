@@ -24,7 +24,7 @@ export default function Myopia() {
           </a>
         </div>
         <div className={styles.photo}>
-          <ImageSlot placeholder={familiesPhoto.photo} src={familiesPhoto.src} alt={familiesPhoto.alt} position="15% center" sizes="(max-width: 900px) 100vw, 50vw" />
+          <ImageSlot placeholder={familiesPhoto.photo} src={familiesPhoto.src} alt={familiesPhoto.alt} position="center" sizes="(max-width: 900px) 100vw, 50vw" />
         </div>
       </div>
     </section>

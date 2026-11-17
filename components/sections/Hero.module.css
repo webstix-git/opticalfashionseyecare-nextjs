@@ -1,49 +1,50 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 700px;
-  overflow: hidden;
-  background: var(--surface);
-  display: flex;
-  align-items: center;
-}
-
-/* Larger text from the accessibility menu can outgrow 700px, so the section grows instead of clipping it. */
-:global(html[data-a11y-text]) .hero {
+  /* Sensible banner height — grows with copy so nothing clips */
+  min-height: clamp(420px, 52vh, 560px);
   height: auto;
-  min-height: 700px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: flex-start;
 }
 
 .photo {
   object-fit: cover;
-  object-position: 72% 35%;
+  /* Bias upward so both heads stay clear in the banner crop */
+  object-position: center 22%;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
+  pointer-events: none;
+  /* White behind hero text; both people stay visible on the right */
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.88) 30%,
-    rgba(255, 255, 255, 0.55) 42%,
-    rgba(255, 255, 255, 0.12) 52%,
-    rgba(255, 255, 255, 0) 60%
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.88) 28%,
+    rgba(255, 255, 255, 0.45) 48%,
+    rgba(255, 255, 255, 0) 62%
   );
 }
 
 .inner {
   position: relative;
+  z-index: 1;
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: calc(var(--header-h) + 16px) var(--gutter) 48px;
+  /* Extra room so the oversized logo never sits on the headline */
+  padding: calc(var(--header-h) + 28px) var(--gutter) 48px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  max-width: 680px;
+  /* Keep copy inside the white left zone; people sit to the right */
+  max-width: min(420px, 34vw);
   color: var(--ink);
 }
 
@@ -54,17 +55,22 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--navy);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .title {
-  font-size: clamp(2.625rem, 5vw, 4.25rem);
-  line-height: 1.14;
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.65rem, 5vw, 3.75rem);
+  line-height: 1.12;
+  margin: 0 0 18px;
   font-weight: 800;
   letter-spacing: -0.04em;
-  text-wrap: balance;
-  text-shadow: 0 1px 4px rgba(20, 22, 43, 0.08);
+}
+
+.titleLine {
+  display: block;
+  white-space: nowrap;
 }
 
 .lead {
@@ -190,28 +196,65 @@
   opacity: 0.8;
 }
 
-/* At tablet widths, keep the headline on the light side of the photograph. */
 @media (min-width: 700px) and (max-width: 1023px) {
+  .hero {
+    min-height: clamp(400px, 48vh, 520px);
+  }
+
+  .photo {
+    object-position: center 24%;
+  }
+
   .overlay {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.93) 45%, rgba(255, 255, 255, 0.78) 70%, rgba(255, 255, 255, 0.45) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 255, 255, 0.8) 34%,
+      rgba(255, 255, 255, 0.3) 55%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
 
   .content,
   .title {
-    max-width: 610px;
+    max-width: 360px;
   }
 }
 
-/* On phones the copy can outgrow 700px, so the section grows instead of clipping it. */
+@media (min-width: 1400px) {
+  .hero {
+    min-height: clamp(460px, 50vh, 560px);
+  }
+
+  .photo {
+    object-position: center 20%;
+  }
+
+  .content,
+  .title {
+    max-width: 440px;
+  }
+}
+
 @media (max-width: 699px) {
   .hero {
-    height: auto;
-    min-height: 700px;
+    min-height: 560px;
   }
+
   .photo {
-    object-position: 70% center;
+    object-position: center 22%;
   }
+
   .overlay {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 55%, rgba(255, 255, 255, 0.72) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(255, 255, 255, 0.82) 45%,
+      rgba(255, 255, 255, 0.35) 100%
+    );
+  }
+
+  .content {
+    max-width: 100%;
   }
 }

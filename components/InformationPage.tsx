@@ -21,7 +21,7 @@ export default function InformationPage({ title, intro, crumb, contentClassName,
       </a>
       <SiteHeader />
       <main id="main">
-        <PageHero crumb={crumb} image="/images/about-hero.png" imageSize={{ width: 951, height: 436 }} lightOverlay title={title} intro={intro} />
+        <PageHero crumb={crumb} image="/images/about-hero.jpg" imageSize={{ width: 951, height: 436 }} lightOverlay title={title} intro={intro} />
         <article className={["container", styles.content, contentClassName].filter(Boolean).join(" ")}>{children}</article>
       </main>
       <SiteFooter />

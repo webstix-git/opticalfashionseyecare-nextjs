@@ -11,6 +11,7 @@ export default function CtaBanner() {
         alt=""
         fill
         sizes="100vw"
+        quality={92}
         className={styles.photo}
       />
       <div aria-hidden="true" className={styles.overlay} />

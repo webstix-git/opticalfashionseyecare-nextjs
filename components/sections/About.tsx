@@ -12,7 +12,7 @@ export default function About({ photo = aboutPhoto }: { photo?: ImageContent & {
               placeholder={photo.photo}
               src={photo.src}
               alt={photo.alt}
-              position="center"
+              position="center 35%"
               sizes="(max-width: 900px) 100vw, 45vw"
             />
           </div>

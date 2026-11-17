@@ -18,11 +18,11 @@ export default function Hero() {
   return (
     <section aria-labelledby="hero-h" className={styles.hero}>
       <Image
-        src="/eye-test.jpg"
-        alt="Smiling patient resting her chin on a slit lamp while an Optical Fashions optometrist examines her eyes"
+        src="/eye-test.jpg?v=20"
+        alt="Optical Fashions optometrist smiling with a patient in the exam room"
         fill
-        loading="eager"
-        fetchPriority="high"
+        priority
+        quality={95}
         sizes="100vw"
         className={styles.photo}
       />
@@ -31,7 +31,8 @@ export default function Hero() {
         <div data-reveal="" className={styles.content}>
           <p className={styles.kicker}>La Crosse &amp; Holmen, Wisconsin</p>
           <h1 id="hero-h" className={styles.title}>
-            Professional Eye Care You Trust
+            <span className={styles.titleLine}>Professional Eye Care</span>
+            <span className={styles.titleLine}>You Trust</span>
           </h1>
           <p className={styles.lead}>
             Since 1962, we&rsquo;ve grown from a small downtown practice into a team of five optometrists who take the time to know every patient and family.

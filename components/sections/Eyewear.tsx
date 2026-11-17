@@ -35,7 +35,7 @@ export default function Eyewear() {
             </div>
           </div>
           <div data-reveal="" className={styles.tall}>
-            <ImageSlot placeholder={main.photo} src={main.src} alt={main.alt} sizes="(max-width: 900px) 100vw, 33vw" />
+            <ImageSlot placeholder={main.photo} src={main.src} alt={main.alt} position="72% 38%" sizes="(max-width: 900px) 100vw, 33vw" />
           </div>
           <div data-reveal="" className={styles.square}>
             <ImageSlot placeholder={detailA.photo} src={detailA.src} alt={detailA.alt} sizes="(max-width: 900px) 50vw, 33vw" />

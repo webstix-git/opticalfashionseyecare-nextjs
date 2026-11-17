@@ -1,0 +1,113 @@
+article.page {
+  max-width: var(--container);
+}
+
+.section {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  text-align: left;
+}
+
+.code {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: var(--navy);
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.body {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.body a {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.linkList {
+  margin: 8px 0 0;
+  padding: 0 0 0 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.linkList li {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.linkList a {
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.linkList a:hover {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.actions :global(.btn) {
+  text-decoration: none;
+}
+
+.actions :global(.btn-primary) {
+  background: var(--navy);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.actions :global(.btn-primary:hover) {
+  background: var(--navy-dark);
+  color: #ffffff;
+}
+
+.actions :global(.btn-outline) {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.actions :global(.btn-outline:hover) {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .actions {
+    width: 100%;
+  }
+
+  .actions :global(.btn) {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

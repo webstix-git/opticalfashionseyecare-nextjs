@@ -45,7 +45,7 @@ export default function EyeCareServicesPage() {
       <main id="main">
         <PageHero
           crumb="Eye Care Services"
-          image="/images/eye-care-services-hero.png"
+          image="/images/eye-care-services-hero.jpg"
           imageSize={{ width: 932, height: 436 }}
           softOverlay
           title="Eye Care Services"
@@ -136,10 +136,10 @@ export default function EyeCareServicesPage() {
             <div id="same-day" role="region" aria-labelledby="same-day-h" data-reveal="" className={styles.sameDay}>
               <div className={styles.sameDayPhoto}>
                 <ImageSlot
-                  placeholder="Photo: patient checking in at the front desk"
+                  placeholder="Photo: Optical Fashions team member ready to help at the desk"
                   src="/images/front-desk-check-in.jpg"
-                  alt="Patient checking in with a receptionist at the clinic front desk"
-                  position="55% center"
+                  alt="Smiling Optical Fashions team member at the clinic desk ready to help patients"
+                  position="center top"
                   sizes="(max-width: 900px) 100vw, 380px"
                 />
               </div>

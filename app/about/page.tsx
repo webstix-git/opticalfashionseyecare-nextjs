@@ -56,7 +56,7 @@ export default function AboutPage() {
       <main id="main" className={styles.main}>
         <PageHero
           crumb="About Us"
-          image="/images/about-hero.png"
+          image="/images/about-hero.jpg"
           imageSize={{ width: 951, height: 436 }}
           lightOverlay
           title="About Optical Fashions"
@@ -138,8 +138,8 @@ export default function AboutPage() {
               <div data-reveal="" className={styles.insurancePhoto}>
                 <ImageSlot
                   src="/images/insurance-family.jpg"
-                  alt="Family sitting together at home"
-                  placeholder="Family sitting together at home"
+                  alt="Optometrist examining a toddler on a parent's lap during a family eye exam"
+                  placeholder="Family eye exam with a young child"
                   sizes="(max-width: 800px) 100vw, 42vw"
                 />
               </div>
