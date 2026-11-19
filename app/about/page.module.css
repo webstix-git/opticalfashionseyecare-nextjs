@@ -179,3 +179,25 @@
   text-transform: uppercase;
   color: var(--navy);
 }
+
+.contactLink {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  align-items: start;
+  gap: 8px;
+  width: fit-content;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contactLink svg {
+  margin-top: 3px;
+}
+
+.contactLink:hover span {
+  text-decoration: underline;
+}

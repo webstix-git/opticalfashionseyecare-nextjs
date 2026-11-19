@@ -59,6 +59,10 @@
   aspect-ratio: 3 / 2;
 }
 
+.brandsIntro {
+  margin-bottom: clamp(36px, 4vw, 52px);
+}
+
 .brandGrid {
   list-style: none;
   margin: 0;

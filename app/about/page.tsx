@@ -9,6 +9,7 @@ import InsurancePlans from "@/components/InsurancePlans";
 import About from "@/components/sections/About";
 import Careers from "@/components/sections/Careers";
 import CareTabs from "@/components/CareTabs";
+import MailIcon from "@/components/MailIcon";
 import { aboutPagePhoto, contact, doctors, leadership, why, type NavLink } from "@/lib/content";
 import styles from "./page.module.css";
 
@@ -120,7 +121,7 @@ export default function AboutPage() {
                   <div className={styles.doctorBody}>
                     <div>
                       <h3 className={styles.doctorName}>{d.name}</h3>
-                      <p className={styles.doctorRole}>Optometrist, O.D.</p>
+                      <p className={styles.doctorRole}>{d.title ?? "Optometrist, O.D."}</p>
                     </div>
                     {d.bio.map((p) => (
                       <p key={p.slice(0, 24)} className={styles.body}>
@@ -172,6 +173,15 @@ export default function AboutPage() {
                         {p}
                       </p>
                     ))}
+                    {person.email ? (
+                      <a href={`mailto:${person.email}`} className={styles.contactLink}>
+                        <MailIcon size={16} />
+                        <span>
+                          {person.email.split("@")[0]}@<wbr />
+                          {person.email.split("@")[1]}
+                        </span>
+                      </a>
+                    ) : null}
                   </div>
                 </li>
               ))}
@@ -185,8 +195,8 @@ export default function AboutPage() {
               <div data-reveal="" className={styles.insurancePhoto}>
                 <ImageSlot
                   src="/images/insurance-family.jpg"
-                  alt="Optometrist examining a toddler on a parent's lap during a family eye exam"
-                  placeholder="Family eye exam with a young child"
+                  alt="Optical Fashions wall sign inside the clinic"
+                  placeholder="Optical Fashions clinic sign"
                   sizes="(max-width: 800px) 100vw, 42vw"
                 />
               </div>

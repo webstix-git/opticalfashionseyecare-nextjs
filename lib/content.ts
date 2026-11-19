@@ -103,18 +103,18 @@ export const services: (ImageContent & { title: string; body: string; cta: strin
     href: "/eye-care-services#exams",
   },
   {
-    photo: "Photo: diagnostic imaging during a medical eye visit",
+    photo: "Photo: doctor consulting with a patient during a medical eye visit",
     src: "/images/service-medical-eye-care.jpg",
-    alt: "Optical Fashions team member reviewing diagnostic results with a patient",
+    alt: "Optical Fashions doctor consulting with a smiling patient during a medical eye visit",
     title: "Medical Eye Care",
     body: "Care for dry eye, glaucoma, cataracts, pink eye and sudden pain or vision changes, with same-day appointments when you need them.",
     cta: "Explore medical eye care",
     href: "/eye-care-services#medical",
   },
   {
-    photo: "Photo: patient trying on glasses in the optical shop",
+    photo: "Photo: Optical Fashions team member helping a patient choose eyewear",
     src: "/images/service-contact-lenses.jpg",
-    alt: "Patient smiling while trying on glasses in the Optical Fashions optical shop",
+    alt: "Optical Fashions team member smiling while helping a patient choose eyewear in the optical shop",
     title: "Contact Lenses & Eyewear",
     body: "Contact lens exams and fittings, plus designer frames from Gucci, YSL, Coach, Nike and more.",
     cta: "Browse contacts and frames",
@@ -229,9 +229,10 @@ export const eyewearPhotos: (ImageContent & { alt?: string; position?: string })
   },
 ];
 
-export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
+export const doctors: (ImageContent & { name: string; title?: string; bio: string[] })[] = [
   {
     name: "Dr. Holly Fisher",
+    title: "Optometrist, O.D., Partner",
     src: "/images/doctors/holly.webp",
     bio: [
       "With roots in Sparta and a career dedicated to helping others see clearly and stay healthy, Dr. Fisher brings experience and a strong sense of community to her work. After graduating from Sparta High School, she earned her Bachelor of Science degree from the University of Wisconsin–Eau Claire and her Doctor of Optometry degree from the University of Missouri–St. Louis. Dr. Fisher started her career at Mayo in Eau Claire and then joined Optical Fashions in 2002.",
@@ -241,6 +242,7 @@ export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
   },
   {
     name: "Dr. Brenda Wedig",
+    title: "Optometrist, O.D., Partner",
     src: "/images/doctors/brenda.webp",
     bio: [
       "Dr. Wedig grew up in a small town in southwestern WI. She received her Bachelor of Science degree from the University of Wisconsin-La Crosse in 2004. During this time, she was introduced to the world of optometry by working at Optical Fashions. She then obtained her Doctorate of Optometry degree from the Pennsylvania College of Optometry in Philadelphia, Pennsylvania in 2008. Dr. Wedig became a Diplomate of the American Board of Optometry in 2014. She enjoys working with patients of all ages. Her care philosophy is to treat every patient as if they were family. She wants patients to feel heard during their exam and tries to explain all findings in a way that patients understand.",
@@ -276,10 +278,11 @@ export const doctors: (ImageContent & { name: string; bio: string[] })[] = [
   },
 ].map((d) => ({ ...d, photo: `Portrait of ${d.name}` }));
 
-export const leadership: (ImageContent & { name: string; role: string; bio: string[] })[] = [
+export const leadership: (ImageContent & { name: string; role: string; email?: string; bio: string[] })[] = [
   {
     name: "Kathryn Block",
     role: "Business Manager",
+    email: "frontdesk@opticalfashionseyecare.com",
     src: "/images/doctors/kathryn.webp",
     photo: "Portrait of Kathryn Block",
     bio: [
