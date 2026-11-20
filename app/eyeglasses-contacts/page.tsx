@@ -105,9 +105,9 @@ export default function EyeglassesContactsPage() {
             </div>
             <div data-reveal="" className={`${styles.media} ${styles.landscape}`}>
               <ImageSlot
-                placeholder="Photo: patient trying on glasses at the mirror in the optical shop"
+                placeholder="Photo: patient wearing designer glasses in the optical shop"
                 src="/images/eyewear/optical-shop-try-on.jpg"
-                alt="Patient smiling in the mirror while trying on glasses in the Optical Fashions shop"
+                alt="Patient wearing designer eyeglasses in the Optical Fashions optical shop"
                 sizes="(max-width: 900px) 100vw, 50vw"
               />
             </div>
@@ -116,25 +116,15 @@ export default function EyeglassesContactsPage() {
 
         <section id="brands" aria-labelledby="brands-h" className={`${styles.band} ${styles.alt}`}>
           <div className={`container ${styles.section}`}>
-            <div className={`${styles.split} ${styles.brandsIntro}`}>
-              <div data-reveal="" className={styles.copy}>
-                <p className="eyebrow">Designer frames</p>
-                <h2 id="brands-h" className="section-title">
-                  Brands We Carry
-                </h2>
-                <p className={styles.body}>
-                  From luxury labels to tough everyday frames and sport styles, there&apos;s something for every face and budget. Our selection changes often, so
-                  stop in to see what&apos;s new.
-                </p>
-              </div>
-              <div data-reveal="" className={`${styles.media} ${styles.landscape}`}>
-                <ImageSlot
-                  placeholder="Photo: patient wearing designer frames in the optical shop"
-                  src="/images/eyewear/designer-frames.jpg"
-                  alt="Patient wearing designer eyeglasses in the Optical Fashions optical shop"
-                  sizes="(max-width: 900px) 100vw, 50vw"
-                />
-              </div>
+            <div data-reveal="" className={styles.head}>
+              <p className="eyebrow">Designer frames</p>
+              <h2 id="brands-h" className="section-title">
+                Brands We Carry
+              </h2>
+              <p className={styles.intro}>
+                From luxury labels to tough everyday frames and sport styles, there&apos;s something for every face and budget. Our selection changes often, so
+                stop in to see what&apos;s new.
+              </p>
             </div>
             <ul data-reveal="" className={styles.brandGrid}>
               {designerBrands.map((b) => (
